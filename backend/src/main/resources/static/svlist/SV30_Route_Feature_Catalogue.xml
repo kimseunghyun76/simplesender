@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S100FC:S100_FC_FeatureCatalogue xmlns:S100FC="http://www.iho.int/S100FC" xmlns:S100Base="http://www.iho.int/S100Base" xmlns:S100CI="http://www.iho.int/S100CI" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:S100FD="http://www.iho.int/S100FD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iho.int/S100FC S100FC.xsd">
+  <S100FC:name>Feature Catalogue for SV30</S100FC:name>
+  <S100FC:scope>Recommended Route</S100FC:scope>
+  <S100FC:fieldOfApplication>Marine Navigation</S100FC:fieldOfApplication>
+  <S100FC:versionNumber>1.2</S100FC:versionNumber>
+  <S100FC:versionDate>2017-08-16</S100FC:versionDate>
+  <S100FC:producer>
+    <S100CI:role>pointOfContact</S100CI:role>
+  </S100FC:producer>
+  <S100FC:classification>unclassified</S100FC:classification>
+  <S100FC:S100_FC_SimpleAttributes>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Start Lat</S100FC:name>
+      <S100FC:definition>Start latitude</S100FC:definition>
+      <S100FC:code>startLat</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Start Long</S100FC:name>
+      <S100FC:definition>Start longitude</S100FC:definition>
+      <S100FC:code>startLong</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>End Lat</S100FC:name>
+      <S100FC:definition>End latitude</S100FC:definition>
+      <S100FC:code>endLat</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>End Long</S100FC:name>
+      <S100FC:definition>End longitude</S100FC:definition>
+      <S100FC:code>endLong</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Waypoint Count</S100FC:name>
+      <S100FC:definition>Waypoint Total Count</S100FC:definition>
+      <S100FC:code>waypointCount</S100FC:code>
+      <S100FC:valueType>integer</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Waypoint No</S100FC:name>
+      <S100FC:definition>Waypoint No</S100FC:definition>
+      <S100FC:code>waypointNo</S100FC:code>
+      <S100FC:valueType>integer</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Next WP Dtg</S100FC:name>
+      <S100FC:definition>Next Waypoint DTG</S100FC:definition>
+      <S100FC:code>nextWpDtg</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Next WP Ttg</S100FC:name>
+      <S100FC:definition>Next Waypoint TTG</S100FC:definition>
+      <S100FC:code>nextWpTtg</S100FC:code>
+      <S100FC:valueType>time</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Waypoint Category</S100FC:name>
+      <S100FC:definition>Waypoint Category</S100FC:definition>
+      <S100FC:code>wpCategory</S100FC:code>
+      <S100FC:valueType>enumeration</S100FC:valueType>
+      <S100FC:listedValues>
+        <S100FC:listedValue>
+          <S100FC:label>Start</S100FC:label>
+          <S100FC:definition>Start Point</S100FC:definition>
+          <S100FC:code>1</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>End</S100FC:label>
+          <S100FC:definition>End Point</S100FC:definition>
+          <S100FC:code>2</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>Waypoint</S100FC:label>
+          <S100FC:definition>Waypoint</S100FC:definition>
+          <S100FC:code>3</S100FC:code>
+        </S100FC:listedValue>
+      </S100FC:listedValues>      
+    </S100FC:S100_FC_SimpleAttribute>    
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Planned Course</S100FC:name>
+      <S100FC:definition>Recommended course on the route</S100FC:definition>
+      <S100FC:code>plannedCourse</S100FC:code>
+      <S100FC:valueType>integer</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Planned Speed</S100FC:name>
+      <S100FC:definition>Recommended speed on the route</S100FC:definition>
+      <S100FC:code>plannedSpeed</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>               
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Issue Date</S100FC:name>
+      <S100FC:definition>the date of recommended route issue</S100FC:definition>
+      <S100FC:code>issueDate</S100FC:code>
+      <S100FC:valueType>dateTime</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Ship Voyage No</S100FC:name>
+      <S100FC:definition>Voyage No</S100FC:definition>
+      <S100FC:code>vvd</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Destination Dtg</S100FC:name>
+      <S100FC:definition>Destination DTG</S100FC:definition>
+      <S100FC:code>destinationDtg</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>    
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Destination Ttg</S100FC:name>
+      <S100FC:definition>Destination TTG</S100FC:definition>
+      <S100FC:code>destinationTtg</S100FC:code>
+      <S100FC:valueType>time</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>        
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Eta</S100FC:name>
+      <S100FC:definition>ETA</S100FC:definition>
+      <S100FC:code>eta</S100FC:code>
+      <S100FC:valueType>dateTime</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Route Type</S100FC:name>
+      <S100FC:definition>type of the Route</S100FC:definition>
+      <S100FC:code>routeType</S100FC:code>
+      <S100FC:valueType>enumeration</S100FC:valueType>
+      <S100FC:listedValues>
+        <S100FC:listedValue>
+          <S100FC:label>LicenseRoute</S100FC:label>
+          <S100FC:definition>It is a route authorized by the government</S100FC:definition>
+          <S100FC:code>1</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>EfficientRoute</S100FC:label>
+          <S100FC:definition>It is a route with high fuel efficiency</S100FC:definition>
+          <S100FC:code>2</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>SafeRoute</S100FC:label>
+          <S100FC:definition>Safety is an important route</S100FC:definition>
+          <S100FC:code>3</S100FC:code>
+        </S100FC:listedValue>
+                <S100FC:listedValue>
+          <S100FC:label>RecommendRoute</S100FC:label>
+          <S100FC:definition>It is a route considering both safety and fuel efficiency</S100FC:definition>
+          <S100FC:code>4</S100FC:code>
+        </S100FC:listedValue>
+      </S100FC:listedValues>
+    </S100FC:S100_FC_SimpleAttribute>             
+
+ <!-- Ship Spec Simple Attribute --> 
+   <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Ship Name</S100FC:name>
+      <S100FC:definition>Ship name</S100FC:definition>
+      <S100FC:code>shipName</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>   
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Ship ID</S100FC:name>
+      <S100FC:definition>Ship ID</S100FC:definition>
+      <S100FC:code>shipId</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>MMSI</S100FC:name>
+      <S100FC:definition>Ship MMSI</S100FC:definition>
+      <S100FC:code>mmsi</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>   
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>IMO No</S100FC:name>
+      <S100FC:definition>Ship IMO Number</S100FC:definition>
+      <S100FC:code>imoNo</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>       
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Call Sign</S100FC:name>
+      <S100FC:definition>Ship call sign</S100FC:definition>
+      <S100FC:code>callSign</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>       
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Net Tonnage</S100FC:name>
+      <S100FC:definition>Net Tonnage</S100FC:definition>
+      <S100FC:code>netTonnage</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Gross Tonnage</S100FC:name>
+      <S100FC:definition>Gross Tonnage</S100FC:definition>
+      <S100FC:code>grossTonnage</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Length</S100FC:name>
+      <S100FC:definition>Ship Length</S100FC:definition>
+      <S100FC:code>length</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>       
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Breadth</S100FC:name>
+      <S100FC:definition>Breadth</S100FC:definition>
+      <S100FC:code>breadth</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>       
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Depth</S100FC:name>
+      <S100FC:definition>Ship Depth</S100FC:definition>
+      <S100FC:code>depth</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Vessel Type</S100FC:name>
+	  <S100FC:definition>Vessel type</S100FC:definition>
+	  <S100FC:code>vsslTp</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Hull Type</S100FC:name>
+	  <S100FC:definition>Hull Type</S100FC:definition>
+	  <S100FC:code>hullTp</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>    
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Shipping Service Type</S100FC:name>
+	  <S100FC:definition>Shipping Service Type</S100FC:definition>
+	  <S100FC:code>shipSvrType</S100FC:code>
+	  <S100FC:valueType>enumeration</S100FC:valueType>
+	  <S100FC:listedValues>
+		<S100FC:listedValue>
+			<S100FC:label>Routine</S100FC:label>
+			<S100FC:definition>Routine</S100FC:definition>
+			<S100FC:code>1</S100FC:code>
+		</S100FC:listedValue>
+	    <S100FC:listedValue>
+			<S100FC:label>NonRoutine</S100FC:label>
+			<S100FC:definition>Non-Routine</S100FC:definition>
+			<S100FC:code>2</S100FC:code>
+	    </S100FC:listedValue>
+	  </S100FC:listedValues>
+	</S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Outer Inner Port</S100FC:name>
+	  <S100FC:definition>Outer Inner Port type</S100FC:definition>
+	  <S100FC:code>inOutPortType</S100FC:code>
+	  <S100FC:valueType>enumeration</S100FC:valueType>
+	  <S100FC:listedValues>
+		<S100FC:listedValue>
+			<S100FC:label>InnerPort</S100FC:label>
+			<S100FC:definition>Inner Port</S100FC:definition>
+			<S100FC:code>1</S100FC:code>
+		</S100FC:listedValue>
+		<S100FC:listedValue>
+			<S100FC:label>OuterPort</S100FC:label>
+			<S100FC:definition>Outer Port</S100FC:definition>
+			<S100FC:code>2</S100FC:code>
+		</S100FC:listedValue>
+	  </S100FC:listedValues>
+	</S100FC:S100_FC_SimpleAttribute>	
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Build Date</S100FC:name>
+	  <S100FC:definition>Build Date of ship</S100FC:definition>
+	  <S100FC:code>buildDate</S100FC:code>
+	  <S100FC:valueType>dateTime</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Owner Nationality</S100FC:name>
+	  <S100FC:definition>Owner Nationality</S100FC:definition>
+	  <S100FC:code>ownerNationality</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Owner</S100FC:name>
+	  <S100FC:definition>Owner of ship</S100FC:definition>
+	  <S100FC:code>owner</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Ship Operator</S100FC:name>
+	  <S100FC:definition>Ship Operator</S100FC:definition>
+	  <S100FC:code>shipOperator</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Operator Nationality</S100FC:name>
+	  <S100FC:definition>Operator Flag</S100FC:definition>
+	  <S100FC:code>operatorFlag</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute>
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Previous Call Sign</S100FC:name>
+	  <S100FC:definition>Previous Call Sign of ship</S100FC:definition>
+	  <S100FC:code>previousCallsign</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute>				
+	<S100FC:S100_FC_SimpleAttribute>
+	  <S100FC:name>Vessel Flag</S100FC:name>
+	  <S100FC:definition>Ship Nationality</S100FC:definition>
+	  <S100FC:code>vesselFlag</S100FC:code>
+	  <S100FC:valueType>text</S100FC:valueType>
+	</S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Main Engine HP</S100FC:name>
+      <S100FC:definition>Main Engine Horse Power</S100FC:definition>
+      <S100FC:code>mainEngHp</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>                  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Regst Port</S100FC:name>
+      <S100FC:definition>Port of Registry</S100FC:definition>
+      <S100FC:code>regstPort</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Displacement</S100FC:name>
+      <S100FC:definition>Displacement</S100FC:definition>
+      <S100FC:code>displacement</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Draft FWD</S100FC:name>
+      <S100FC:definition>Draft FWD</S100FC:definition>
+      <S100FC:code>draftFwd</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Draft AFT</S100FC:name>
+      <S100FC:definition>Draft AFT</S100FC:definition>
+      <S100FC:code>draftAft</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>                                
+  </S100FC:S100_FC_SimpleAttributes>    
+
+  <S100FC:S100_FC_Roles>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>Consists</S100FC:name>
+      <S100FC:definition>a authority and host of a specified service</S100FC:definition>
+      <S100FC:code>consists</S100FC:code>
+    </S100FC:S100_FC_Role>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>ConsistsOf</S100FC:name>
+      <S100FC:definition>a pointer to the aggregate in a whole-part relationship</S100FC:definition>
+      <S100FC:code>consistsOf</S100FC:code>
+    </S100FC:S100_FC_Role>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>Use</S100FC:name>
+      <S100FC:definition>do something with it in order to achieve a particular result</S100FC:definition>
+      <S100FC:code>use</S100FC:code>
+    </S100FC:S100_FC_Role>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>Used By</S100FC:name>
+      <S100FC:definition>do something with it in order to achieve a particular result</S100FC:definition>
+      <S100FC:code>usedby</S100FC:code>
+    </S100FC:S100_FC_Role>
+  </S100FC:S100_FC_Roles>
+  
+    <S100FC:S100_FC_InformationAssociations>
+    <S100FC:S100_FC_InformationAssociation isAbstract="false">
+      <S100FC:name>Ship Information</S100FC:name>
+      <S100FC:definition>Ship Information Association</S100FC:definition>
+      <S100FC:code>shipInformation</S100FC:code>
+      <S100FC:role ref="use"/>
+      <S100FC:role ref="usedby"/>
+    </S100FC:S100_FC_InformationAssociation>
+    <S100FC:S100_FC_InformationAssociation isAbstract="false">
+      <S100FC:name>Route Additional Information</S100FC:name>
+      <S100FC:definition>Route Additional Information Association</S100FC:definition>
+      <S100FC:code>routeAdditionalInformation</S100FC:code>
+      <S100FC:role ref="consists"/>
+      <S100FC:role ref="consistsOf"/>
+    </S100FC:S100_FC_InformationAssociation>          
+  </S100FC:S100_FC_InformationAssociations>
+    
+  
+  <S100FC:S100_FC_FeatureAssociations>
+    <S100FC:S100_FC_FeatureAssociation isAbstract="false">
+      <S100FC:name>Route Line</S100FC:name>
+      <S100FC:definition>a feature association for the binding between waypoint and Leg</S100FC:definition>
+      <S100FC:code>routeLine</S100FC:code>
+      <S100FC:role ref="consists"/>
+      <S100FC:role ref="consistsOf"/>
+    </S100FC:S100_FC_FeatureAssociation>
+    <S100FC:S100_FC_FeatureAssociation isAbstract="false">
+      <S100FC:name>Route Service</S100FC:name>
+      <S100FC:definition>a feature association for the binding between Route and Leg</S100FC:definition>
+      <S100FC:code>routeService</S100FC:code>
+      <S100FC:role ref="use"/>
+      <S100FC:role ref="usedby"/>
+    </S100FC:S100_FC_FeatureAssociation>
+  </S100FC:S100_FC_FeatureAssociations>
+ 
+ 
+  <S100FC:S100_FC_InformationTypes>  
+  
+  <!-- Ship Spec Information Type -->
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Ship Spec</S100FC:name>
+      <S100FC:definition>Ship sepecification</S100FC:definition>
+      <S100FC:code>ShipSpec</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="shipName"/>
+      </S100FC:attributeBinding>          
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="shipId"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="mmsi"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="imoNo"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="callSign"/>
+      </S100FC:attributeBinding>   
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="netTonnage"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="grossTonnage"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="length"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="breadth"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="depth"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+          </S100FC:multiplicity>			
+          <S100FC:attribute ref="vsslTp"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+          </S100FC:multiplicity>			
+          <S100FC:attribute ref="hullTp"/>
+      </S100FC:attributeBinding>	  
+	  <S100FC:attributeBinding sequential="false">
+		 <S100FC:multiplicity>
+			<S100Base:lower>0</S100Base:lower>
+			<S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+		</S100FC:multiplicity>
+		<S100FC:permittedValues>
+			    <S100FC:value>1</S100FC:value>
+				<S100FC:value>2</S100FC:value>
+		</S100FC:permittedValues>
+		<S100FC:attribute ref="shipSvrType"/>
+	  </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+		<S100FC:permittedValues>
+			    <S100FC:value>1</S100FC:value>
+				<S100FC:value>2</S100FC:value>
+		</S100FC:permittedValues>        
+        <S100FC:attribute ref="inOutPortType"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="buildDate"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="ownerNationality"/>
+      </S100FC:attributeBinding>                                         
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="owner"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="shipOperator"/>
+      </S100FC:attributeBinding>                                         
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="operatorFlag"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="previousCallsign"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="vesselFlag"/>
+      </S100FC:attributeBinding>                              
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="mainEngHp"/>
+      </S100FC:attributeBinding>               
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="regstPort"/>
+      </S100FC:attributeBinding>             
+    </S100FC:S100_FC_InformationType>    
+    
+
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Ship Condi</S100FC:name>
+      <S100FC:definition>Ship Condition</S100FC:definition>
+      <S100FC:code>ShipCondi</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="displacement"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="draftFwd"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="draftAft"/>
+      </S100FC:attributeBinding>      
+    </S100FC:S100_FC_InformationType>      
+     
+ 
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>RouteInfo</S100FC:name>
+      <S100FC:definition>Additional Information on Route</S100FC:definition>
+      <S100FC:code>RouteInfo</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="issueDate"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="vvd"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="destinationDtg"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="destinationTtg"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="eta"/>
+      </S100FC:attributeBinding>      
+    </S100FC:S100_FC_InformationType>    
+  </S100FC:S100_FC_InformationTypes>  
+
+  <S100FC:S100_FC_FeatureTypes>
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Route</S100FC:name>
+      <S100FC:definition>Information on route</S100FC:definition>
+      <S100FC:code>Route</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="startLat"/>
+      </S100FC:attributeBinding>   
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="startLong"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="endLat"/>
+      </S100FC:attributeBinding>       
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="endLong"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="waypointCount"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:permittedValues>
+          <S100FC:value>1</S100FC:value>
+          <S100FC:value>2</S100FC:value>
+          <S100FC:value>3</S100FC:value>
+          <S100FC:value>4</S100FC:value>                                                     
+        </S100FC:permittedValues>        
+        <S100FC:attribute ref="routeType"/>
+      </S100FC:attributeBinding>      
+      
+      <S100FC:informationBinding roleType="association">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="shipInformation"/>
+        <S100FC:informationType ref="ShipSpec"/>
+      </S100FC:informationBinding>  
+      <S100FC:informationBinding roleType="association">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="shipInformation"/>
+        <S100FC:informationType ref="ShipCondi"/>
+      </S100FC:informationBinding>         
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="routeAdditionalInformation"/>
+        <S100FC:informationType ref="RouteInfo"/>
+      </S100FC:informationBinding>  
+                       
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+      
+      <S100FC:featureBinding roleType="composition">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="routeService"/>
+        <S100FC:role ref="use"/>
+        <S100FC:featureType ref="Waypoint"/>
+      </S100FC:featureBinding>     
+      <S100FC:permittedPrimitives>noGeometry</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType>
+
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Waypoint</S100FC:name>
+      <S100FC:definition>waypoint of recommended route</S100FC:definition>
+      <S100FC:code>Waypoint</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="waypointNo"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="nextWpDtg"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="nextWpTtg"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:permittedValues>
+          <S100FC:value>1</S100FC:value>
+          <S100FC:value>2</S100FC:value>
+          <S100FC:value>3</S100FC:value>                                                  
+        </S100FC:permittedValues>         
+        <S100FC:attribute ref="wpCategory"/>
+      </S100FC:attributeBinding>
+             
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+      
+      <S100FC:featureBinding roleType="composition">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="true" infinite="true"></S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="routeService"/>
+        <S100FC:role ref="usedby"/>
+        <S100FC:featureType ref="Route"/>
+      </S100FC:featureBinding>
+      <S100FC:featureBinding roleType="association">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="routeLine"/>
+        <S100FC:role ref="consistsOf"/>
+        <S100FC:featureType ref="Leg"/>
+      </S100FC:featureBinding>      
+      <S100FC:permittedPrimitives>point</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType>
+
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Leg</S100FC:name>
+      <S100FC:definition>leg of recommended route</S100FC:definition>
+      <S100FC:code>Leg</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="plannedSpeed"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="plannedCourse"/>
+      </S100FC:attributeBinding>
+      
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+     
+      <S100FC:featureBinding roleType="association">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="routeLine"/>
+        <S100FC:role ref="consists"/>
+        <S100FC:featureType ref="Waypoint"/>
+      </S100FC:featureBinding>
+      <S100FC:permittedPrimitives>curve</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType>
+
+  </S100FC:S100_FC_FeatureTypes>
+</S100FC:S100_FC_FeatureCatalogue>

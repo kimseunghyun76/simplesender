@@ -1,0 +1,26 @@
+server:
+  address: 192.168.11.159
+  port: 7090
+
+# Logging pattern for the console& Logging pattern for file
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"
+  file: "logs/console.log"
+
+# Mysql
+spring:
+  main:
+    banner-mode: "off"
+  http:
+    encoding:
+      charset: UTF-8
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/mcmockup?verifyServerCertificate=false&useSSL=false&requireSSL=false
+    username: root
+    password: 1212

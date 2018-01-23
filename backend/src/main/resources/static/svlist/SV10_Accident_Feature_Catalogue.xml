@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S100FC:S100_FC_FeatureCatalogue xmlns:S100FC="http://www.iho.int/S100FC" xmlns:S100Base="http://www.iho.int/S100Base" xmlns:S100CI="http://www.iho.int/S100CI" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:S100FD="http://www.iho.int/S100FD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iho.int/S100FC S100FC.xsd">
+  <S100FC:name>Feature Catalogue for SV10 Accident Management</S100FC:name>
+  <S100FC:scope>Accident Management</S100FC:scope>
+  <S100FC:fieldOfApplication>Marine Navigation</S100FC:fieldOfApplication>
+  <S100FC:versionNumber>1.2</S100FC:versionNumber>
+  <S100FC:versionDate>2017-08-16</S100FC:versionDate>
+  <S100FC:producer>
+    <S100CI:role>pointOfContact</S100CI:role>
+  </S100FC:producer>
+  <S100FC:classification>unclassified</S100FC:classification>
+  
+  <S100FC:S100_FC_SimpleAttributes>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Issue Date</S100FC:name>
+      <S100FC:definition>Data creation date</S100FC:definition>
+      <S100FC:code>issueDate</S100FC:code>
+      <S100FC:valueType>dateTime</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Accident Date</S100FC:name>
+      <S100FC:definition>Accident Date</S100FC:definition>
+      <S100FC:code>accidentDate</S100FC:code>
+      <S100FC:valueType>dateTime</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>     
+      <S100FC:name>MMSI</S100FC:name>
+      <S100FC:definition>MMSI</S100FC:definition>
+      <S100FC:code>mmsi</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>       
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Accident Type</S100FC:name>
+      <S100FC:definition>Accident Type</S100FC:definition>
+      <S100FC:code>accidentType</S100FC:code>
+      <S100FC:valueType>enumeration</S100FC:valueType>
+      <S100FC:listedValues>
+        <S100FC:listedValue>
+          <S100FC:label>Unknow</S100FC:label>
+          <S100FC:definition>Unknow</S100FC:definition>
+          <S100FC:code>1</S100FC:code>
+        </S100FC:listedValue>      
+        <S100FC:listedValue>
+          <S100FC:label>Collision</S100FC:label>
+          <S100FC:definition>Collision</S100FC:definition>
+          <S100FC:code>2</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>Grounding</S100FC:label>
+          <S100FC:definition>Grounding</S100FC:definition>
+          <S100FC:code>3</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>Fire</S100FC:label>
+          <S100FC:definition>Fire</S100FC:definition>
+          <S100FC:code>4</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>Flooding</S100FC:label>
+          <S100FC:definition>Flooding</S100FC:definition>
+          <S100FC:code>5</S100FC:code>
+        </S100FC:listedValue>
+      </S100FC:listedValues>  
+    </S100FC:S100_FC_SimpleAttribute>         
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Predict Time</S100FC:name>
+      <S100FC:definition>Predict Time</S100FC:definition>
+      <S100FC:code>predictTime</S100FC:code>
+      <S100FC:valueType>dateTime</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Vessel Route Hdg</S100FC:name>
+      <S100FC:definition>Expected route of accident vessel</S100FC:definition>
+      <S100FC:code>vesselRouteHdg</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Spilt Oil Route Used</S100FC:name>
+      <S100FC:definition>Expected route of spilt oil</S100FC:definition>
+      <S100FC:code>spiltOilRouteUsed</S100FC:code>
+      <S100FC:valueType>integer</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>                 
+  </S100FC:S100_FC_SimpleAttributes>
+  
+  <S100FC:S100_FC_Roles>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>Cause</S100FC:name>
+      <S100FC:definition>Causal role in cause and effect</S100FC:definition>
+      <S100FC:code>cause</S100FC:code>
+    </S100FC:S100_FC_Role>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>Effect</S100FC:name>
+      <S100FC:definition>Effect role in cause and effect</S100FC:definition>
+      <S100FC:code>effect</S100FC:code>
+    </S100FC:S100_FC_Role>       
+  </S100FC:S100_FC_Roles>
+
+  
+  <S100FC:S100_FC_FeatureAssociations>
+    <S100FC:S100_FC_FeatureAssociation isAbstract="false">
+      <S100FC:name>Accident Association</S100FC:name>
+      <S100FC:definition>a feature association for the binding between Accident and RoutePrediction</S100FC:definition>
+      <S100FC:code>accidentAssociation</S100FC:code>
+      <S100FC:role ref="cause"/>
+      <S100FC:role ref="effect"/>
+    </S100FC:S100_FC_FeatureAssociation> 
+  </S100FC:S100_FC_FeatureAssociations>
+ 
+   
+  <S100FC:S100_FC_FeatureTypes>
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Accident</S100FC:name>
+      <S100FC:definition>It describes the marine accident</S100FC:definition>
+      <S100FC:code>Accident</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="issueDate"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="accidentDate"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:permittedValues>
+          <S100FC:value>1</S100FC:value>
+          <S100FC:value>2</S100FC:value>
+          <S100FC:value>3</S100FC:value>
+          <S100FC:value>4</S100FC:value>
+          <S100FC:value>5</S100FC:value>          
+        </S100FC:permittedValues>        
+        <S100FC:attribute ref="accidentType"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="mmsi"/>
+      </S100FC:attributeBinding>                               
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+      <S100FC:featureBinding roleType="association">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="accidentAssociation"/>
+        <S100FC:role ref="cause"/>
+        <S100FC:featureType ref="RoutePrediction"/>
+      </S100FC:featureBinding>           
+      <S100FC:permittedPrimitives>point</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType>  
+
+
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Route Prediction</S100FC:name>
+      <S100FC:definition>It predicts the development of the accident</S100FC:definition>
+      <S100FC:code>RoutePrediction</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="predictTime"/>
+      </S100FC:attributeBinding>             
+      <S100FC:subType>VesselRoutePrediction</S100FC:subType>   
+      <S100FC:subType>SpiltOilRoutePrediction</S100FC:subType>          
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+      <S100FC:featureBinding roleType="association">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper xsi:nil="true" infinite="true"/>
+        </S100FC:multiplicity>
+        <S100FC:association ref="accidentAssociation"/>
+        <S100FC:role ref="effect"/>
+        <S100FC:featureType ref="Accident"/>
+      </S100FC:featureBinding>        
+	  <S100FC:permittedPrimitives>noGeometry</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType> 
+
+    
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Vessel Route Prediction</S100FC:name>
+      <S100FC:definition>It predicts the development of the accident</S100FC:definition>
+      <S100FC:code>VesselRoutePrediction</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="vesselRouteHdg"/>
+      </S100FC:attributeBinding>
+      <S100FC:superType>RoutePrediction</S100FC:superType>          
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+      <S100FC:permittedPrimitives>point</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType> 
+
+
+    <S100FC:S100_FC_FeatureType isAbstract="false">
+      <S100FC:name>Spilt Oil Route Prediction</S100FC:name>
+      <S100FC:definition>It predicts the development of the accident</S100FC:definition>
+      <S100FC:code>SpiltOilRoutePrediction</S100FC:code>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="spiltOilRouteUsed"/>
+      </S100FC:attributeBinding>
+      <S100FC:superType>RoutePrediction</S100FC:superType>        
+      <S100FC:featureUseType>geographic</S100FC:featureUseType>
+      <S100FC:permittedPrimitives>surface</S100FC:permittedPrimitives>
+    </S100FC:S100_FC_FeatureType> 
+           
+  </S100FC:S100_FC_FeatureTypes>
+</S100FC:S100_FC_FeatureCatalogue>

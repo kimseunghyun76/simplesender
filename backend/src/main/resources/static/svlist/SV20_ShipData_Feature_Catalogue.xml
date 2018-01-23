@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S100FC:S100_FC_FeatureCatalogue xmlns:S100FC="http://www.iho.int/S100FC" xmlns:S100Base="http://www.iho.int/S100Base" xmlns:S100CI="http://www.iho.int/S100CI" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:S100FD="http://www.iho.int/S100FD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iho.int/S100FC S100FC.xsd">
+  <S100FC:name>Feature Catalogue for SV20 Ship Data</S100FC:name>
+  <S100FC:scope>Ship Data</S100FC:scope>
+  <S100FC:fieldOfApplication>Marine Navigation</S100FC:fieldOfApplication>
+  <S100FC:versionNumber>1.2</S100FC:versionNumber>
+  <S100FC:versionDate>2017-08-10</S100FC:versionDate>
+  <S100FC:producer>
+    <S100CI:role>pointOfContact</S100CI:role>
+  </S100FC:producer>
+  <S100FC:classification>unclassified</S100FC:classification>
+  
+  <S100FC:S100_FC_SimpleAttributes>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Inclionmeter Heeling</S100FC:name>
+      <S100FC:definition>Inclionmeter Heeling</S100FC:definition>
+      <S100FC:code>heeling</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Rolling Angle</S100FC:name>
+      <S100FC:definition>Rolling Angle</S100FC:definition>
+      <S100FC:code>rollingAngle</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Pitching Angle</S100FC:name>
+      <S100FC:definition>Pitching Angle</S100FC:definition>
+      <S100FC:code>pitchingAngle</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Ship Heading</S100FC:name>
+      <S100FC:definition>Ship Heading</S100FC:definition>
+      <S100FC:code>gpsHeading</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>         
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Ship Speed</S100FC:name>
+      <S100FC:definition>Ship Speed</S100FC:definition>
+      <S100FC:code>gpsSpeed</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>          
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Wind Direction</S100FC:name>
+      <S100FC:definition>Wind Direction</S100FC:definition>
+      <S100FC:code>windDirection</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>    
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Wind Speed</S100FC:name>
+      <S100FC:definition>Wind Speed</S100FC:definition>
+      <S100FC:code>windSpeed</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Fresh Water Tank</S100FC:name>
+      <S100FC:definition>Fresh Water Tank</S100FC:definition>
+      <S100FC:code>freshWaterTank</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Forepeak Tank</S100FC:name>
+      <S100FC:definition>Forepeak Tank</S100FC:definition>
+      <S100FC:code>forepeakTank</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Water Ballast Tank</S100FC:name>
+      <S100FC:definition>Water Ballast Tank</S100FC:definition>
+      <S100FC:code>waterBallastTank</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>            
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Aftpeak Tank</S100FC:name>
+      <S100FC:definition>Aftpeak Tank</S100FC:definition>
+      <S100FC:code>aftpeakTank</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Oily Bilge Tank</S100FC:name>
+      <S100FC:definition>Oily Bilge Tank</S100FC:definition>
+      <S100FC:code>oilyBilgeTank</S100FC:code>
+      <S100FC:valueType>real</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Log Power Fail</S100FC:name>
+      <S100FC:definition>Log Power Fail</S100FC:definition>
+      <S100FC:code>log</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Ais Power Fail</S100FC:name>
+      <S100FC:definition>Ais Power Fail</S100FC:definition>
+      <S100FC:code>ais</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>No1 GPS Power Fail</S100FC:name>
+      <S100FC:definition>No1 GPS Power Fail</S100FC:definition>
+      <S100FC:code>firGps</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>No2 GPS Power Fail</S100FC:name>
+      <S100FC:definition>No2 GPS Power Fail</S100FC:definition>
+      <S100FC:code>secGps</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>ECDIS Power Fail</S100FC:name>
+      <S100FC:definition>ECDIS Power Fail</S100FC:definition>
+      <S100FC:code>ecdis</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>No1 Radar Power Fail</S100FC:name>
+      <S100FC:definition>No1 Radar Power Fail</S100FC:definition>
+      <S100FC:code>firRadar</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>No2 Radar Power Fail</S100FC:name>
+      <S100FC:definition>No2 Radar Power Fail</S100FC:definition>
+      <S100FC:code>secRadar</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Echo Sounder Power Fail</S100FC:name>
+      <S100FC:definition>Echo Sounder Power Fail</S100FC:definition>
+      <S100FC:code>echoSounder</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Gyro Compass Power Fail</S100FC:name>
+      <S100FC:definition>Gyro Compass Power Fail</S100FC:definition>
+      <S100FC:code>gyroCompass</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Auto Pilot Power Fail</S100FC:name>
+      <S100FC:definition>Auto Pilot Power Fail</S100FC:definition>
+      <S100FC:code>autoPilot</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Shut Down Activated</S100FC:name>
+      <S100FC:definition>Shut Down Activated</S100FC:definition>
+      <S100FC:code>shutDown</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Slow Down Activated</S100FC:name>
+      <S100FC:definition>Slow Down Activated</S100FC:definition>
+      <S100FC:code>slowDown</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Identification</S100FC:name>
+      <S100FC:definition>Identification</S100FC:definition>
+      <S100FC:code>identification</S100FC:code>
+      <S100FC:valueType>text</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>CFW High Temp Trip</S100FC:name>
+      <S100FC:definition>CFW High Temp Trip</S100FC:definition>
+      <S100FC:code>cfwHighTempTrip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>LO Low Press Trip</S100FC:name>
+      <S100FC:definition>LO Low Press Trip</S100FC:definition>
+      <S100FC:code>loLowPressTrip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Over Speed Trip</S100FC:name>
+      <S100FC:definition>Over Speed Trip</S100FC:definition>
+      <S100FC:code>overSpeedTrip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Common Trip</S100FC:name>
+      <S100FC:definition>Common Trip</S100FC:definition>
+      <S100FC:code>commonTrip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Speed Sensor Fail Trip</S100FC:name>
+      <S100FC:definition>Speed Sensor Fail Trip</S100FC:definition>
+      <S100FC:code>speedSensorFailTrip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Start Fail</S100FC:name>
+      <S100FC:definition>Start Fail</S100FC:definition>
+      <S100FC:code>startFail</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Common Shutdown</S100FC:name>
+      <S100FC:definition>Common Shutdown</S100FC:definition>
+      <S100FC:code>commonShutDown</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Trip</S100FC:name>
+      <S100FC:definition>Trip</S100FC:definition>
+      <S100FC:code>trip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>            
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Run</S100FC:name>
+      <S100FC:definition>Run</S100FC:definition>
+      <S100FC:code>run</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>     
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Preperential Trip</S100FC:name>
+      <S100FC:definition>Preperential Trip</S100FC:definition>
+      <S100FC:code>preperentialTrip</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>         
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Control Power Fail</S100FC:name>
+      <S100FC:definition>Control Power Fail</S100FC:definition>
+      <S100FC:code>controlPowerFail</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>                                      
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>HYD LO TK LL</S100FC:name>
+      <S100FC:definition>HYD LO TK LL</S100FC:definition>
+      <S100FC:code>hydLOTkLL</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>         
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>HYD Lock Alarm</S100FC:name>
+      <S100FC:definition>HYD Lock Alarm</S100FC:definition>
+      <S100FC:code>hydLockAlarm</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>       
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Motor Run</S100FC:name>
+      <S100FC:definition>Motor Run</S100FC:definition>
+      <S100FC:code>motorRun</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>                    
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>No-Volt</S100FC:name>
+      <S100FC:definition>No-Volt</S100FC:definition>
+      <S100FC:code>noVolt</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Overload</S100FC:name>
+      <S100FC:definition>Overload</S100FC:definition>
+      <S100FC:code>overLoad</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute> 
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Phase Fail</S100FC:name>
+      <S100FC:definition>Phase Fail</S100FC:definition>
+      <S100FC:code>phaseFail</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>FireDoor Open</S100FC:name>
+      <S100FC:definition>FireDoor Open</S100FC:definition>
+      <S100FC:code>fireDoorOpen</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>FireDoor Position ID</S100FC:name>
+      <S100FC:definition>FireDoor Position ID</S100FC:definition>
+      <S100FC:code>fireDoorPositionId</S100FC:code>
+      <S100FC:valueType>integer</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>        
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Detector Type</S100FC:name>
+      <S100FC:definition>Detector Type</S100FC:definition>
+      <S100FC:code>detectorType</S100FC:code>
+      <S100FC:valueType>enumeration</S100FC:valueType>
+      <S100FC:listedValues>
+        <S100FC:listedValue>
+          <S100FC:label>Smoke</S100FC:label>
+          <S100FC:definition>Smoke</S100FC:definition>
+          <S100FC:code>1</S100FC:code>
+        </S100FC:listedValue>      
+        <S100FC:listedValue>
+          <S100FC:label>Heat</S100FC:label>
+          <S100FC:definition>Heat</S100FC:definition>
+          <S100FC:code>2</S100FC:code>
+        </S100FC:listedValue>
+        <S100FC:listedValue>
+          <S100FC:label>Flame</S100FC:label>
+          <S100FC:definition>Flame</S100FC:definition>
+          <S100FC:code>3</S100FC:code>
+        </S100FC:listedValue>
+      </S100FC:listedValues>        
+    </S100FC:S100_FC_SimpleAttribute>   
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Alarm</S100FC:name>
+      <S100FC:definition>Alarm</S100FC:definition>
+      <S100FC:code>alarm</S100FC:code>
+      <S100FC:valueType>boolean</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>    
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Position ID</S100FC:name>
+      <S100FC:definition>Position ID</S100FC:definition>
+      <S100FC:code>positionId</S100FC:code>
+      <S100FC:valueType>integer</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>  
+    <S100FC:S100_FC_SimpleAttribute>
+      <S100FC:name>Alarm Time</S100FC:name>
+      <S100FC:definition>Alarm Time</S100FC:definition>
+      <S100FC:code>alarmTime</S100FC:code>
+      <S100FC:valueType>dateTime</S100FC:valueType>
+    </S100FC:S100_FC_SimpleAttribute>          
+  </S100FC:S100_FC_SimpleAttributes>
+ 
+ 
+  
+  <S100FC:S100_FC_Roles>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>Consists</S100FC:name>
+      <S100FC:definition>a authority and host of a specified service</S100FC:definition>
+      <S100FC:code>consists</S100FC:code>
+    </S100FC:S100_FC_Role>
+    <S100FC:S100_FC_Role>
+      <S100FC:name>ConsistsOf</S100FC:name>
+      <S100FC:definition>a pointer to the aggregate in a whole-part relationship</S100FC:definition>
+      <S100FC:code>consistsOf</S100FC:code>
+    </S100FC:S100_FC_Role>
+  </S100FC:S100_FC_Roles>
+
+  <S100FC:S100_FC_InformationAssociations>
+    <S100FC:S100_FC_InformationAssociation isAbstract="false">
+      <S100FC:name>Navigation Deck Alarm Transmit</S100FC:name>
+      <S100FC:definition>a feature association for the binding between Ship Data and Navigation Deck Alarm</S100FC:definition>
+      <S100FC:code>navigationDeckAlarmTransmit</S100FC:code>
+      <S100FC:role ref="consists"/>
+      <S100FC:role ref="consistsOf"/>
+    </S100FC:S100_FC_InformationAssociation>
+    <S100FC:S100_FC_InformationAssociation isAbstract="false">
+      <S100FC:name>Engine Room Alarm Transmit</S100FC:name>
+      <S100FC:definition>a feature association for the binding between Ship Data and Engine Room Alarm</S100FC:definition>
+      <S100FC:code>engineRoomAlarmTransmit</S100FC:code>
+      <S100FC:role ref="consists"/>
+      <S100FC:role ref="consistsOf"/>
+    </S100FC:S100_FC_InformationAssociation>
+    <S100FC:S100_FC_InformationAssociation isAbstract="false">
+      <S100FC:name>Fire Alarm Transmit</S100FC:name>
+      <S100FC:definition>a feature association for the binding between Ship Data and Fire Alarm</S100FC:definition>
+      <S100FC:code>fireAlarmTransmit</S100FC:code>
+      <S100FC:role ref="consists"/>
+      <S100FC:role ref="consistsOf"/>
+    </S100FC:S100_FC_InformationAssociation>  
+    <S100FC:S100_FC_InformationAssociation isAbstract="false">
+      <S100FC:name>Recovery Info Transmit</S100FC:name>
+      <S100FC:definition>a feature association for the binding between Ship Data and Recovery Infomation</S100FC:definition>
+      <S100FC:code>recoveryInfoTransmit</S100FC:code>
+      <S100FC:role ref="consists"/>
+      <S100FC:role ref="consistsOf"/>
+    </S100FC:S100_FC_InformationAssociation>       
+  </S100FC:S100_FC_InformationAssociations>
+  
+  
+  <S100FC:S100_FC_InformationTypes>
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Ship Data</S100FC:name>
+      <S100FC:definition>Ship Data</S100FC:definition>
+      <S100FC:code>ShipData</S100FC:code>
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="navigationDeckAlarmTransmit"/>
+        <S100FC:role ref="consists"/>
+        <S100FC:informationType ref="NavigationEquipmentPowerFail"/>
+      </S100FC:informationBinding> 
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="fireAlarmTransmit"/>
+        <S100FC:role ref="consists"/>        
+        <S100FC:informationType ref="FireAlarmInfo"/>
+      </S100FC:informationBinding>      
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="recoveryInfoTransmit"/>
+        <S100FC:role ref="consists"/>        
+        <S100FC:informationType ref="RecoveryInfo"/>
+      </S100FC:informationBinding> 
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper xsi:nil="false" infinite="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="engineRoomAlarmTransmit"/>
+        <S100FC:role ref="consists"/>        
+        <S100FC:informationType ref="AMS"/>
+      </S100FC:informationBinding>            
+    </S100FC:S100_FC_InformationType>  
+    
+    <S100FC:S100_FC_InformationType isAbstract="true">
+      <S100FC:name>AMS</S100FC:name>
+      <S100FC:definition>AMS</S100FC:definition>
+      <S100FC:code>AMS</S100FC:code> 
+      
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper xsi:nil="true" infinite="true"></S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="engineRoomAlarmTransmit"/>
+        <S100FC:role ref="consistsOf"/>           
+        <S100FC:informationType ref="ShipData"/>
+      </S100FC:informationBinding> 
+      <S100FC:subType>AMSMainEngineActivation</S100FC:subType>      
+      <S100FC:subType>AMSGenerator</S100FC:subType>
+      <S100FC:subType>AMSEmergencyGenerator</S100FC:subType>  
+      <S100FC:subType>AMSSteeringGear</S100FC:subType>                                
+    </S100FC:S100_FC_InformationType>     
+
+
+    <S100FC:S100_FC_InformationType isAbstract="true">
+      <S100FC:name>Fire Alarm Info</S100FC:name>
+      <S100FC:definition>Fire Alarm Info</S100FC:definition>
+      <S100FC:code>FireAlarmInfo</S100FC:code> 
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper xsi:nil="true" infinite="true"></S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="fireAlarmTransmit"/>
+        <S100FC:role ref="consistsOf"/>          
+        <S100FC:informationType ref="ShipData"/>
+      </S100FC:informationBinding> 
+	  <S100FC:subType>FireDoorInfo</S100FC:subType>      
+	  <S100FC:subType>FireAlarm</S100FC:subType>                       
+    </S100FC:S100_FC_InformationType>          
+    
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Navigation Equipment Power Fail</S100FC:name>
+      <S100FC:definition>Navigation Equipment Power Fail</S100FC:definition>
+      <S100FC:code>NavigationEquipmentPowerFail</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="log"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="ais"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="firGps"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="secGps"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="ecdis"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="firRadar"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="secRadar"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="echoSounder"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="gyroCompass"/>
+      </S100FC:attributeBinding>      
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="autoPilot"/>
+      </S100FC:attributeBinding>
+            
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper xsi:nil="true" infinite="true"></S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="navigationDeckAlarmTransmit"/>
+        <S100FC:role ref="consistsOf"/>          
+        <S100FC:informationType ref="ShipData"/>
+      </S100FC:informationBinding>                                  
+    </S100FC:S100_FC_InformationType> 
+          
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Fire Door Info</S100FC:name>
+      <S100FC:definition>Fire Door Info</S100FC:definition>
+      <S100FC:code>FireDoorInfo</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="fireDoorOpen"/>
+      </S100FC:attributeBinding>   
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="fireDoorPositionId"/>
+      </S100FC:attributeBinding>         
+      <S100FC:superType>FireAlarmInfo</S100FC:superType>                
+    </S100FC:S100_FC_InformationType>  
+        
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Fire Alarm</S100FC:name>
+      <S100FC:definition>Fire Alarm</S100FC:definition>
+      <S100FC:code>FireAlarm</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+	    <S100FC:permittedValues>          
+			    <S100FC:value>1</S100FC:value>
+				<S100FC:value>2</S100FC:value>
+				<S100FC:value>3</S100FC:value>
+	    </S100FC:permittedValues>	        
+        <S100FC:attribute ref="detectorType"/>        
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="alarm"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="positionId"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="alarmTime"/>
+      </S100FC:attributeBinding>        
+      <S100FC:superType>FireAlarmInfo</S100FC:superType>                              
+    </S100FC:S100_FC_InformationType>              
+    
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>Recovery Info</S100FC:name>
+      <S100FC:definition>Recovery Info</S100FC:definition>
+      <S100FC:code>RecoveryInfo</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="heeling"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="rollingAngle"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="pitchingAngle"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="gpsHeading"/>
+      </S100FC:attributeBinding>  
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="gpsSpeed"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="windDirection"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="windSpeed"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="freshWaterTank"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="forepeakTank"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="waterBallastTank"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="aftpeakTank"/>
+      </S100FC:attributeBinding>        
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="oilyBilgeTank"/>
+      </S100FC:attributeBinding>              
+      <S100FC:informationBinding roleType="aggregation">
+        <S100FC:multiplicity>
+          <S100Base:lower>0</S100Base:lower>
+          <S100Base:upper xsi:nil="true" infinite="true"></S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:association ref="recoveryInfoTransmit"/>
+        <S100FC:role ref="consistsOf"/>          
+        <S100FC:informationType ref="ShipData"/>
+      </S100FC:informationBinding>                      
+    </S100FC:S100_FC_InformationType> 
+    
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>AMS Main Engine Activation</S100FC:name>
+      <S100FC:definition>AMS Main Engine Activation</S100FC:definition>
+      <S100FC:code>AMSMainEngineActivation</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="shutDown"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="slowDown"/>
+      </S100FC:attributeBinding> 
+      <S100FC:superType>AMS</S100FC:superType>                  
+    </S100FC:S100_FC_InformationType>     
+        
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>AMS Generator</S100FC:name>
+      <S100FC:definition>AMS Generator</S100FC:definition>
+      <S100FC:code>AMSGenerator</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="identification"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="cfwHighTempTrip"/>
+      </S100FC:attributeBinding>          
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="loLowPressTrip"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="overSpeedTrip"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="commonTrip"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="speedSensorFailTrip"/>
+      </S100FC:attributeBinding>   
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="startFail"/>
+      </S100FC:attributeBinding>    
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="commonShutDown"/>
+      </S100FC:attributeBinding>   
+      <S100FC:superType>AMS</S100FC:superType>                      
+    </S100FC:S100_FC_InformationType>    
+ 
+    
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>AMS Emergency Generator</S100FC:name>
+      <S100FC:definition>AMS Emergency Generator</S100FC:definition>
+      <S100FC:code>AMSEmergencyGenerator</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="trip"/>
+      </S100FC:attributeBinding> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="overSpeedTrip"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="run"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="preperentialTrip"/>
+      </S100FC:attributeBinding>
+      <S100FC:superType>AMS</S100FC:superType>                 
+    </S100FC:S100_FC_InformationType>           
+    
+
+    <S100FC:S100_FC_InformationType isAbstract="false">
+      <S100FC:name>AMS Steering Gear</S100FC:name>
+      <S100FC:definition>AMS Steering Gear</S100FC:definition>
+      <S100FC:code>AMSSteeringGear</S100FC:code> 
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="identification"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="controlPowerFail"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="hydLOTkLL"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="hydLockAlarm"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="motorRun"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="noVolt"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="overLoad"/>
+      </S100FC:attributeBinding>
+      <S100FC:attributeBinding sequential="false">
+        <S100FC:multiplicity>
+          <S100Base:lower>1</S100Base:lower>
+          <S100Base:upper infinite="false" xsi:nil="false">1</S100Base:upper>
+        </S100FC:multiplicity>
+        <S100FC:attribute ref="phaseFail"/>
+      </S100FC:attributeBinding>
+      <S100FC:superType>AMS</S100FC:superType>                 
+    </S100FC:S100_FC_InformationType>  
+        
+  </S100FC:S100_FC_InformationTypes>
+
+    
+  
+</S100FC:S100_FC_FeatureCatalogue>
