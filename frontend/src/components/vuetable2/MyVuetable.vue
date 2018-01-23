@@ -1,32 +1,3 @@
-<template>
-    <div class="ui">
-        <filter-bar></filter-bar>
-        <vuetable 
-        ref="vuetable"
-        api-url="http://192.168.11.159:7090/clientResponseList"
-        :fields="fields"
-        pagination-path=""
-        :per-page="10"
-        track-by="seq"
-        :render-icon='renderBootstrapIcon'
-        :append-params="moreParams"
-        :sort-order="sortOrder"
-        detail-row-component="my-detail-row"
-        @vuetable:pagination-data="onPaginationData"
-        ></vuetable>
-        <div class="vuetable-pagination ui basic segment grid">
-            <vuetable-pagination-info 
-            ref="paginationInfo"
-            info-template="MC로 부터 {from} to {to} of {total} Requests"
-            no-data-template="요청한 데이터가 없습니다."
-            ></vuetable-pagination-info>
-            <vuetable-pagination 
-            ref="pagination"
-            @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
-        </div>
-    </div>
-</template>
-
 <script>
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
@@ -35,21 +6,47 @@ import accounting from 'accounting'
 import moment from 'moment'
 import Vue from 'vue'
 import CustomActions from './CustomAction'
-import DetailRow from './DetailRow'
 import FilterBar from './FilterBar'
 import VueEvents from 'vue-events'
-import FieldDefs from './FieldDefs.js'
 
 Vue.use(VueEvents)
 Vue.component('custom-actions', CustomActions)
-Vue.component('my-detail-row', DetailRow)
 Vue.component('filter-bar', FilterBar)
 
 export default {
+  name: 'my-vuetable',
   components: {
     Vuetable,
     VuetablePagination,
     VuetablePaginationInfo
+  },
+  props: {
+    apiUrl: {
+      type: String,
+      required: true
+    },
+    fields: {
+      type: Array,
+      required: true
+    },
+    sortOrder: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    appendParams: {
+      type: Object,
+      default () {
+        return {}
+      }
+    },
+    detailRowComponent: {
+      type: String
+    },
+    trackBy: {
+      type: String
+    }
   },
   mounted () {
     this.$events.$on('filter-set', eventData => this.onFilterSet(eventData))
@@ -65,21 +62,79 @@ export default {
         descendingIcon: 'blue chevron down icon',
         detailRowClass: 'vuetable-detail-row',
         sortHandleIcon: 'grey sidebar icon'
-      },
-      sortOrder: [
-        {
-          field: 'regDate',
-          sortField: 'regDate',
-          direction: 'desc'
-        }
-      ],
-      moreParams: {
-
-      },
-      fields: FieldDefs
+      }
     }
   },
+  render (h) {
+    return h(
+      'div',
+      {
+        class: { ui: true }
+      },
+      [
+        h('filter-bar'),
+        this.renderVuetable(h),
+        this.renderPagination(h)
+      ]
+    )
+  },
   methods: {
+    // render related functions
+    renderVuetable (h) {
+      return h(
+        'vuetable',
+        {
+          ref: 'vuetable',
+          props: {
+            apiUrl: this.apiUrl,
+            fields: this.fields,
+            paginationPath: '',
+            perPage: 10,
+            multiSort: false,
+            sortOrder: this.sortOrder,
+            appendParams: this.appendParams,
+            trackBy: this.trackBy,
+            detailRowComponent: this.detailRowComponent,
+            renderIcon: this.renderBootstrapIcon
+          },
+          on: {
+            'vuetable:pagination-data': this.onPaginationData
+          },
+          scopedSlots: this.$vnode.data.scopedSlots
+        }
+      )
+    },
+    renderPagination (h) {
+      return h(
+        'div',
+        {
+          class: {
+            'vuetable-pagination': true,
+            'ui': true,
+            'basic': true,
+            'segment': true,
+            'grid': true
+          }
+        },
+        [
+          h('vuetable-pagination-info',
+            {
+              ref: 'paginationInfo',
+              infoTemplate: '{from} to {to} of {total} Requests',
+              noDataTemplate: '요청한 데이터가 없습니다.'
+            }
+          ),
+          h('vuetable-pagination',
+            {
+              ref: 'pagination',
+              on: {
+                'vuetable-pagination:change-page': this.onChangePage
+              }
+            }
+          )
+        ]
+      )
+    },
     chgupper (value) {
       return value.toUpperCase()
     },
@@ -114,13 +169,13 @@ export default {
       this.$refs.vuetable.toggleDetailRow(data.seq)
     },
     onFilterSet (filterText) {
-      this.moreParams = {
+      this.appendParams.filter = {
         'filter': filterText
       }
       Vue.nextTick(() => this.$refs.vuetable.refresh())
     },
     onFilterReset () {
-      this.moreParams = {}
+      this.appendParams.filter = {}
       Vue.nextTick(() => this.$refs.vuetable.refresh())
     }
   }
