@@ -1,7 +1,7 @@
 <template>
-  <div>
-  <b-card title="Mcc Http Sender"
-          sub-title="This is a MC Mockup Page for sending a message from the Marine Cloud to the Marine Cloud Connector.">
+  <div class="mt-3">
+  <b-card title="HTTP SENDER"
+          sub-title="This is a http sender with some header and body(payload) to target url.">
     <b-container fluid>
       <b-row class="mt-3">
         <b-col>
@@ -30,18 +30,18 @@
           <!--REQUEST LAYER-->
           <b-card notitle>
             <div class="text-right">
-              <b-button variant="success" @click="addRow" >Add Header</b-button>
+              <b-button variant="success" @click="addRow" size="sm">Add Header</b-button>
             </div>
             <div v-for="(input, index) in inputs" :key="input.id"  class="mt-2">
               <b-input-group>
                 <b-form-input type="text" id="headerKey" placeholder="New Key" size="sm" v-model="input.name"></b-form-input>
-                <b-form-input type="text" id="headerValue" placeholder="Value" size="sm" v-model="input.value"></b-form-input>
+                <b-form-input type="text" id="headerValue" placeholder="Value" size="sm" v-model="input.value" style="width:60%"></b-form-input>
                 <b-btn size="sm" variant="secondary" @click="deleteRow(index)"> X </b-btn>
                 <!-- Main form input -->
               </b-input-group>
             </div>
             <div class="text-right mt-3">
-              <b-form-select v-model="selectedsvlist" :options="svlist" :state="getSVFile">
+              <b-form-select v-model="selectedsvlist" :options="svlist" :state="getSVFile" size="sm">
               </b-form-select>
               <b-form-textarea v-model="payload" placeholder="Enter something" :rows="6" :max-rows="10" contenteditable class='responseBodyForm'></b-form-textarea>
             </div>

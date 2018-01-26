@@ -2,20 +2,28 @@ export default [
   {
     name: '__sequence',
     title: '#',
-    titleClass: 'center aligned',
-    dataClass: 'center aligned'
+    titleClass: 'text-center',
+    dataClass: 'text-center'
   },
   {
     name: 'regDate',
-    title: '일시',
-    titleClass: 'center aligned',
-    dataClass: 'center aligned',
+    title: 'Request Date',
+    titleClass: 'text-center',
+    dataClass: 'text-center',
     callback: 'formatDate|YYYY-MM-DD h:mm:ss a',
     sortField: 'regDate'
   },
   {
+    name: 'method',
+    title: 'Method',
+    callback: 'methodLabel',
+    sortField: 'method',
+    titleClass: 'text-center',
+    dataClass: 'text-center'
+  },
+  {
     name: 'dstMrn',
-    title: 'Dst',
+    title: 'Dst-MRN',
     titleClass: 'text-left',
     dataClass: 'text-left',
     callback: 'chgulower',
@@ -23,24 +31,19 @@ export default [
   },
   {
     name: 'srcMrn',
-    title: 'Src',
+    title: 'Src-MRN',
     callback: 'chgulower',
     sortField: 'srcMrn'
   },
   {
-    name: 'method',
-    title: 'Method',
-    callback: 'methodLabel',
-    sortField: 'method'
-  },
-  {
     name: 'hexSignedData',
     title: 'Hex',
-    callback: 'omitStr'
+    callback: 'omitStr',
+    visible: false
   },
   {
     name: 'accessToken',
-    title: 'Token'
+    title: 'TOKEN'
   },
   {
     name: 'payload',
@@ -49,8 +52,8 @@ export default [
   },
   {
     name: '__component:custom-actions',
-    title: 'Actions',
-    titleClass: 'center aligned',
-    dataClass: 'center aligned'
+    title: 'ACTION',
+    titleClass: 'text-center',
+    dataClass: 'text-center'
   }
 ]

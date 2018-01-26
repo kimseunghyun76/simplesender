@@ -1,14 +1,24 @@
 <template>
-    <div class="filter-bar ui basic segment grid">
-      <div class="ui form">
-        <div class="inline field">
-          <label>Search for:</label>
-          <input type="text" v-model="filterText" class="three wide column" @keyup.enter="doFilter" placeholder="dstMrn or srcMrn">
-          <button class="ui primary button" @click="doFilter">Go</button>
-          <button class="ui button" @click="resetFilter">Reset</button>
-        </div>
-      </div>
-    </div>
+<b-container fluid>
+  <b-row class="mb-3">
+    <b-col lg="6">
+    </b-col>
+    <b-col lg="6">
+      <b-input-group class="mt-3">
+        <b-form-input
+          id="targetUrl"
+          type="text"
+          v-model="filterText"
+          @keyup.enter="doFilter" 
+          placeholder="dstMrn or srcMrn"></b-form-input>
+      <b-button-group>
+        <b-button variant="info" @click="doFilter">Search</b-button>
+        <b-button @click="resetFilter">Reset</b-button>
+      </b-button-group>
+      </b-input-group>
+    </b-col>
+  </b-row>
+</b-container>
 </template>
 
 <script>

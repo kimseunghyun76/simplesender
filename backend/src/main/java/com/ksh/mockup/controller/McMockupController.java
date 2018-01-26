@@ -9,6 +9,10 @@ import com.ksh.mockup.repository.VuePage;
 import com.ksh.mockup.repository.VuePageable;
 import com.ksh.mockup.service.FileService;
 import com.ksh.mockup.service.ServerService;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
+import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +26,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
+
+
 
 @RestController
 public class McMockupController {
@@ -88,12 +94,23 @@ public class McMockupController {
         VuePageable pageable = new VuePageable(page, per_page, s);
         Page p = null;
 
-
-        if(filter != null && filter.trim().length() > 0 ){
-            log.error("findByDstMrnLike : {}",filter);
-            p = clientResponseRepository.findByDstMrnContainingOrSrcMrnContaining(filter ,filter,pageable);
+        JSONParser parser = new JSONParser();
+        String findFilter = "";
+        if(filter != null){
+            try{
+                Object obj = parser.parse("["+filter+"]");
+                JSONArray array = (JSONArray)obj;
+                JSONObject filterObj = (JSONObject)array.get(0);
+                if(filterObj.get("filter") != null)
+                  findFilter = filterObj.get("filter").toString();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        if(findFilter != ""){
+            log.error(findFilter);
+            p = clientResponseRepository.findByDstMrnContainingOrSrcMrnContaining(findFilter,findFilter ,pageable);
         }else{
-            log.error("findAll : {}",filter);
             p = clientResponseRepository.findAll(pageable);
         }
 

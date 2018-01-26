@@ -8,7 +8,7 @@
       </b-row>
       <b-row class="mt-3">
         <b-col>
-          <b-card title="FROM MC REQUEST">
+          <b-card title="Get messages" sub-title="This target is http://106.248.228.114:7090/">
             <my-vuetable
               api-url="http://192.168.11.159:7090/clientResponseList"
               :fields="fields"
@@ -21,15 +21,14 @@
         </b-col>
       </b-row>
     </b-container>
-    <!--div>selectedmethod: <strong>{{ selectedmethod }}</strong></div-->
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import MyVuetable from '@/components/vuetable2/MyVuetable'
-import FieldDefs from './vuetable2/FieldDefs.js'
-import DetailRow from './vuetable2/DetailRow'
+import FieldDefs from './vuetableconfig/FieldDefs.js'
+import DetailRow from './vuetableconfig/DetailRow'
 import httpSender from './httpSender'
 
 Vue.component('http-sender', httpSender)
@@ -64,4 +63,5 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
 </style>

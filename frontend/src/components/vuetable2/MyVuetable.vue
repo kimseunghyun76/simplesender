@@ -1,6 +1,7 @@
 <script>
 import Vuetable from 'vuetable-2/src/components/Vuetable'
-import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
+// import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
+import VuetablePaginationBootstrap from './VuetablePaginationBootstrap'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
 import accounting from 'accounting'
 import moment from 'moment'
@@ -8,6 +9,7 @@ import Vue from 'vue'
 import CustomActions from './CustomAction'
 import FilterBar from './FilterBar'
 import VueEvents from 'vue-events'
+import CssConfig from './config/VuetableCssConfig.js'
 
 Vue.use(VueEvents)
 Vue.component('custom-actions', CustomActions)
@@ -17,8 +19,9 @@ export default {
   name: 'my-vuetable',
   components: {
     Vuetable,
-    VuetablePagination,
-    VuetablePaginationInfo
+    // VuetablePagination,
+    VuetablePaginationInfo,
+    VuetablePaginationBootstrap
   },
   props: {
     apiUrl: {
@@ -55,14 +58,7 @@ export default {
   },
   data () {
     return {
-      css: {
-        tableClass: 'ui blue selectable celled stackable attached table',
-        loadingClass: 'loading',
-        ascendingIcon: 'blue chevron up icon',
-        descendingIcon: 'blue chevron down icon',
-        detailRowClass: 'vuetable-detail-row',
-        sortHandleIcon: 'grey sidebar icon'
-      }
+      css: CssConfig
     }
   },
   render (h) {
@@ -95,7 +91,8 @@ export default {
             appendParams: this.appendParams,
             trackBy: this.trackBy,
             detailRowComponent: this.detailRowComponent,
-            renderIcon: this.renderBootstrapIcon
+            renderIcon: this.renderBootstrapIcon,
+            css: this.css.table
           },
           on: {
             'vuetable:pagination-data': this.onPaginationData
@@ -120,13 +117,20 @@ export default {
           h('vuetable-pagination-info',
             {
               ref: 'paginationInfo',
-              infoTemplate: '{from} to {to} of {total} Requests',
-              noDataTemplate: '요청한 데이터가 없습니다.'
+              class: { 'pull-left': true },
+              props: {
+                infoTemplate: '{from} to {to} of {total} Requests',
+                noDataTemplate: '요청한 데이터가 없습니다.'
+              }
             }
           ),
-          h('vuetable-pagination',
+          h('vuetable-pagination-bootstrap',
             {
               ref: 'pagination',
+              class: { 'pull-right': true },
+              props: {
+                css: this.css.paginationInfo
+              },
               on: {
                 'vuetable-pagination:change-page': this.onChangePage
               }
@@ -165,9 +169,6 @@ export default {
     omitStr (value) {
       return (value.length > 30) ? value.substring(0, 30) + '...' : value
     },
-    onCellClicked (data, field, event) {
-      this.$refs.vuetable.toggleDetailRow(data.seq)
-    },
     onFilterSet (filterText) {
       this.appendParams.filter = {
         'filter': filterText
@@ -183,7 +184,18 @@ export default {
 </script>
 
 <style>
-.ui.table tr td{
-  font-size: 14px
+div {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 14px;
+  color: black;
+}
+.table-bordered th {
+  background-color:whitesmoke;
+}
+.page-item.active .page-link {
+  background-color:#17a2b8;
+  border-color:#17a2b8;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: white;
 }
 </style>

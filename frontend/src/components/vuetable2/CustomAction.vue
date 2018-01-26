@@ -1,6 +1,6 @@
 <template>
-  <div class="custom-actions">
-    <button class="ui basic button" @click="viewItem(rowData, rowIndex)"><i class="zoom icon"></i></button>
+  <div>
+    <i class="fa fa-info-circle fa-lg" @click="viewItem(rowData, rowIndex)"></i>
   </div>
 </template>
 

@@ -123,7 +123,7 @@ public class ServerService {
             log.error(e.getMessage());
             mcHttpResponse = new MyHttpResponse(IOException,null,e.getMessage());
         }finally {
-            try { in.close(); } catch (IOException e) { e.printStackTrace(); }
+//            try { in.close(); } catch (IOException e) { e.printStackTrace(); }
   //          try { wr.close(); } catch (IOException e) { e.printStackTrace(); }
         }
         return mcHttpResponse;
