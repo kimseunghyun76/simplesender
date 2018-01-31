@@ -7,6 +7,7 @@
         <b-navbar-nav>
           <b-nav-item href="/#/mcc/mockup">Http Sender</b-nav-item>
           <b-nav-item href="/#/mcc/coder">Encode/Decode</b-nav-item>
+          <b-nav-item href="/#/mcc/logviewer">logviewer</b-nav-item>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->

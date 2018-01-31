@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import McMockup from '@/components/contents/mcmockup/main'
+import McMockup from '@/router/main'
 import Coder from '@/components/contents/coder/main'
+import Logviewer from '@/components/contents/logviewer/main'
 import Login from '@/components/auth/Login'
 import Signup from '@/components/auth/Signup'
 import firebase from 'firebase'
@@ -41,6 +42,14 @@ let router = new Router({
       path: '/mcc/coder',
       name: 'Coder',
       component: Coder,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/mcc/logviewer',
+      name: 'Logviewer',
+      component: Logviewer,
       meta: {
         requiresAuth: true
       }

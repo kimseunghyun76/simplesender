@@ -27,9 +27,9 @@
 <script>
 import Vue from 'vue'
 import MyVuetable from '@/components/vuetable2/MyVuetable'
-import FieldDefs from './vuetableconfig/FieldDefs.js'
-import DetailRow from './vuetableconfig/DetailRow'
-import httpSender from './httpSender'
+import FieldDefs from '@/components/contents/mcmockup/vuetableconfig/FieldDefs.js'
+import DetailRow from '@/components/contents/mcmockup/vuetableconfig/DetailRow'
+import httpSender from '@/components/contents/mcmockup/httpSender'
 
 Vue.component('http-sender', httpSender)
 Vue.component('my-detail-row', DetailRow)

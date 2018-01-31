@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.net.*;
 import java.time.LocalDateTime;
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -149,7 +148,7 @@ public class ServerService {
         String AccessToken ="";
         String HexSignedData ="";
         String payload ="";
-        LocalDateTime now = LocalDateTime.now();;
+        LocalDateTime now = LocalDateTime.now();
 
         if(headers.get("dstMrn") != null)
             dstMrn = headers.get("dstMrn").toString();

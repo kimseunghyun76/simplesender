@@ -9,9 +9,11 @@ import com.ksh.mockup.repository.VuePage;
 import com.ksh.mockup.repository.VuePageable;
 import com.ksh.mockup.service.FileService;
 import com.ksh.mockup.service.ServerService;
-import org.json.simple.JSONObject;
+import com.mashape.unirest.http.Headers;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
 import org.json.simple.JSONArray;
-import org.json.simple.parser.ParseException;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +27,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
@@ -96,22 +100,48 @@ public class McMockupController {
 
         JSONParser parser = new JSONParser();
         String findFilter = "";
+        String searchText = "";
+        String searchName= "";
+        String startDate = "";
+        String endDate = "";
+        LocalDateTime startDateTime=LocalDateTime.now();
+        LocalDateTime endDateTime=LocalDateTime.now();
+
         if(filter != null){
             try{
                 Object obj = parser.parse("["+filter+"]");
                 JSONArray array = (JSONArray)obj;
                 JSONObject filterObj = (JSONObject)array.get(0);
-                if(filterObj.get("filter") != null)
-                  findFilter = filterObj.get("filter").toString();
+                if(filterObj.get("filter") != null) {
+                    JSONObject searchObj =  (JSONObject)filterObj.get("filter");
+                    findFilter = filterObj.get("filter").toString();
+                    searchName = searchObj.get("searchName").toString();
+                    searchText = searchObj.get("searchText").toString();
+                    startDate = searchObj.get("startDate").toString() + " 00:00";
+                    endDate = searchObj.get("endDate").toString()+ " 23:59";
+
+                    // 날짜넘어온것을 이제부터 넘겨봅시다요.
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                    startDateTime = LocalDateTime.parse(startDate, formatter);
+                    endDateTime = LocalDateTime.parse(endDate, formatter);
+                    log.info("--------------------------");
+                    log.info("searchText  = " + searchText);
+                    log.info("startDate  = " + startDate);
+                    log.info("endDate  = " + endDate);
+                    log.info("--------------------------");
+                }
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
-        if(findFilter != ""){
-            log.error(findFilter);
-            p = clientResponseRepository.findByDstMrnContainingOrSrcMrnContaining(findFilter,findFilter ,pageable);
+        if(searchText != ""){
+            if("DstMRN".equals(searchName))
+                p = clientResponseRepository.findByRegDateBetweenAndDstMrnContaining(startDateTime,endDateTime,searchText,pageable);
+            else
+                p = clientResponseRepository.findByRegDateBetweenAndSrcMrnContaining(startDateTime,endDateTime,searchText,pageable);
+
         }else{
-            p = clientResponseRepository.findAll(pageable);
+            p = clientResponseRepository.findByRegDateBetween(startDateTime,endDateTime,pageable);
         }
 
         //문제 발생 : "|" 과 같은 특수문자가 request 상에 넘어올 때 내장형 톰캣에서 오류 발생
@@ -126,6 +156,19 @@ public class McMockupController {
 
         return vuepage;
     }
+
+    @CrossOrigin(maxAge = 3600)
+    @RequestMapping("/queuelist")
+    @ResponseBody
+    public String  getQueueList() throws Exception{
+        HttpResponse<String> response = Unirest.get("http://localhost:15672/api/queues")
+                .header("authorization", "Basic Z3Vlc3Q6Z3Vlc3Q=")
+                .header("cache-control", "no-cache")
+                .asString();
+        return response.getBody().toString();
+    }
+
+
 
     @CrossOrigin(maxAge = 3600)
     @RequestMapping("/svlist")

@@ -18,7 +18,9 @@
     "firebase": "^4.9.0",
     "js-base64": "^2.4.1",
     "moment": "^2.20.1",
+    "v-calendar": "^0.5.5",
     "vue": "^2.4.2",
+    "vue-bootstrap-datetimepicker": "^4.1.2",
     "vue-events": "^3.1.0",
     "vue-router": "^2.7.0",
     "vuetable-2": "^1.7.2"
