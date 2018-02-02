@@ -1,20 +1,15 @@
 package com.ksh.mockup.controller;
 
-import com.ksh.mockup.entity.ClientResponse;
-import com.ksh.mockup.entity.MyFile;
-import com.ksh.mockup.entity.MyHttpRequest;
-import com.ksh.mockup.entity.MyHttpResponse;
+import com.ksh.mockup.entity.*;
 import com.ksh.mockup.repository.ClientResponseRepository;
+import com.ksh.mockup.repository.ElasticSearchRepository;
 import com.ksh.mockup.repository.VuePage;
 import com.ksh.mockup.repository.VuePageable;
 import com.ksh.mockup.service.FileService;
 import com.ksh.mockup.service.ServerService;
-import com.mashape.unirest.http.Headers;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +61,20 @@ public class McMockupController {
     private ClientResponseRepository clientResponseRepository;
 
 
+    @Autowired
+    private ElasticSearchRepository elasticSearchRepository;
+
+    /**
+     * ES 에서 데이터 추출
+     * @param vueTableRequest
+     * @return
+     */
+    @CrossOrigin(maxAge = 3600)
+    @RequestMapping(path="/MccLogList")
+    @ResponseBody()
+    public VueTableResponse getESLogResponseList(@RequestBody VueTableRequest vueTableRequest) {
+        return elasticSearchRepository.findMessageWithPrefix(vueTableRequest);
+    }
 
     @CrossOrigin(maxAge = 3600)
     @RequestMapping(path="/clientResponseList")
@@ -84,8 +93,6 @@ public class McMockupController {
         if(sort != null && sort.lastIndexOf("|") >  -1){
             properties = sort.split("\\|")[0];
             direction = sort.split("\\|")[1];
-            log.info(properties);
-            log.info(direction);
             if(direction.equals("desc")){
                 s = new Sort(Sort.Direction.DESC,properties);
             }else{
@@ -98,7 +105,6 @@ public class McMockupController {
         VuePageable pageable = new VuePageable(page, per_page, s);
         Page p = null;
 
-        JSONParser parser = new JSONParser();
         String findFilter = "";
         String searchText = "";
         String searchName= "";
@@ -107,33 +113,28 @@ public class McMockupController {
         LocalDateTime startDateTime=LocalDateTime.now();
         LocalDateTime endDateTime=LocalDateTime.now();
 
-        if(filter != null){
+        if(filter != null && !"{}".equals(filter)){
             try{
-                Object obj = parser.parse("["+filter+"]");
-                JSONArray array = (JSONArray)obj;
-                JSONObject filterObj = (JSONObject)array.get(0);
-                if(filterObj.get("filter") != null) {
-                    JSONObject searchObj =  (JSONObject)filterObj.get("filter");
-                    findFilter = filterObj.get("filter").toString();
+                JSONObject obj  = new JSONObject(filter);
+                if(obj.get("filter") != null) {
+                    JSONObject searchObj = (JSONObject) obj.get("filter");
+
                     searchName = searchObj.get("searchName").toString();
                     searchText = searchObj.get("searchText").toString();
                     startDate = searchObj.get("startDate").toString() + " 00:00";
-                    endDate = searchObj.get("endDate").toString()+ " 23:59";
+                    endDate = searchObj.get("endDate").toString() + " 23:59";
 
                     // 날짜넘어온것을 이제부터 넘겨봅시다요.
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
                     startDateTime = LocalDateTime.parse(startDate, formatter);
                     endDateTime = LocalDateTime.parse(endDate, formatter);
-                    log.info("--------------------------");
-                    log.info("searchText  = " + searchText);
-                    log.info("startDate  = " + startDate);
-                    log.info("endDate  = " + endDate);
-                    log.info("--------------------------");
                 }
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
+
+
         if(searchText != ""){
             if("DstMRN".equals(searchName))
                 p = clientResponseRepository.findByRegDateBetweenAndDstMrnContaining(startDateTime,endDateTime,searchText,pageable);
@@ -146,15 +147,8 @@ public class McMockupController {
 
         //문제 발생 : "|" 과 같은 특수문자가 request 상에 넘어올 때 내장형 톰캣에서 오류 발생
         //Tomcat 상위 버전에서 발생한 문제로 인해 Undertow로 변경함
-        VuePage<ClientResponse> vuepage = new VuePage(p.getContent(), pageable, p.getTotalElements(), url);
 
-        //  size <-- per_page=10
-        log.error("offset : {}",pageable.getOffset());
-        log.error("pageNumber : {}",pageable.getPageNumber());
-        log.error("pagesize : {}",pageable.getPageSize());
-        log.error("sort : {}",pageable.getSort());
-
-        return vuepage;
+        return new VuePage(p.getContent(), pageable, p.getTotalElements(), url);
     }
 
     @CrossOrigin(maxAge = 3600)

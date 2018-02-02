@@ -95,6 +95,7 @@ export default {
             css: this.css.table
           },
           on: {
+            'vuetable:cell-clicked': this.onCellClicked,
             'vuetable:pagination-data': this.onPaginationData
           },
           scopedSlots: this.$vnode.data.scopedSlots
@@ -167,7 +168,8 @@ export default {
       return `<span class="${classes.join(' ')}" ${options}></span>`
     },
     omitStr (value) {
-      return (value.length > 30) ? value.substring(0, 30) + '...' : value
+      alert(value.substring(0, 30))
+      return encodeURI((value.length > 30) ? value.substring(0, 30) + '...' : value)
     },
     onFilterSet (filterText) {
       this.appendParams.filter = {
@@ -178,6 +180,10 @@ export default {
     onFilterReset () {
       this.appendParams.filter = {}
       Vue.nextTick(() => this.$refs.vuetable.refresh())
+    },
+    onCellClicked (data, field, event) {
+      console.log('cellClicked: ', field.name)
+      this.$refs.vuetable.toggleDetailRow(data.seq)
     }
   }
 }

@@ -38,8 +38,7 @@ export default [
   {
     name: 'hexSignedData',
     title: 'Hex',
-    callback: 'omitStr',
-    visible: false
+    callback: 'omitStr'
   },
   {
     name: 'accessToken',
@@ -48,12 +47,6 @@ export default [
   {
     name: 'payload',
     title: 'payload',
-    visible: false
-  },
-  {
-    name: '__component:custom-actions',
-    title: 'ACTION',
-    titleClass: 'text-center',
-    dataClass: 'text-center'
+    callback: 'omitStr'
   }
 ]

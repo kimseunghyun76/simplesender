@@ -41,7 +41,7 @@
               </b-input-group>
             </div>
             <div class="text-right mt-3">
-              <b-form-select v-model="selectedsvlist" :options="svlist" :state="getSVFile" size="sm">
+              <b-form-select v-model="selectedsvlist" :options="svlist" :state="getSVFile">
               </b-form-select>
               <b-form-textarea v-model="payload" placeholder="Enter something" :rows="6" :max-rows="10" contenteditable class='responseBodyForm'></b-form-textarea>
             </div>

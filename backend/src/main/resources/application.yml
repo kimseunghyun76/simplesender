@@ -31,3 +31,10 @@ spring:
     url: jdbc:mysql://localhost:3306/mcmockup?verifyServerCertificate=false&useSSL=false&requireSSL=false
     username: root
     password: 1212
+
+# customer
+mcc:
+  elasticsearch:
+    cluster-name: elasticsearch
+    host: localhost
+    port : 9200

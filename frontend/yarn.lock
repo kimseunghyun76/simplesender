@@ -1006,10 +1006,11 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap-vue@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-1.4.1.tgz#9064938be4dd1d5dc3a9b880eeb558d47a097152"
+bootstrap-vue@^2.0.0-rc.1:
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.0.0-rc.1.tgz#97b2dd59d3e6c9871b95ed2aa47df29d52407096"
   dependencies:
+    bootstrap "^4.0.0"
     lodash.startcase "^4.4.0"
     opencollective "^1.0.3"
     popper.js "^1.12.9"
@@ -1018,6 +1019,10 @@ bootstrap-vue@^1.4.0:
 bootstrap@^3.3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+
+bootstrap@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0.tgz#ceb03842c145fcc1b9b4e15da2a05656ba68469a"
 
 bootstrap@^4.0.0-alpha.6:
   version "4.0.0-beta.3"

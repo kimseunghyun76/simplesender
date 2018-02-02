@@ -18,7 +18,7 @@
     methods: {
       viewItem (data, index) {
         this.$events.fire('detail-view', data.seq)
-        // console.log('custom-actions: ' + action, data.name, index)
+        console.log('custom-actions: ' + data.name, index)
       }
     }
   }

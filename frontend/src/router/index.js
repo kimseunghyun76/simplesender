@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import McMockup from '@/router/main'
-import Coder from '@/components/contents/coder/main'
-import Logviewer from '@/components/contents/logviewer/main'
-import Login from '@/components/auth/Login'
-import Signup from '@/components/auth/Signup'
+import Login from '@/services/auth/Login'
+import Signup from '@/services/auth/Signup'
 import firebase from 'firebase'
+import Logviewer from '@/services/logviewer/main'
+import Coder from '@/services/coder/main'
+import McMockup from '@/services/mcmockup/main'
 
 Vue.use(Router)
 
@@ -62,7 +61,7 @@ router.beforeEach((to, from, next) => {
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
 
   if (requiresAuth && !currentUser) next('/auth/login')
-  else if (!requiresAuth && currentUser) next('/mcc/mockup')
+  else if (!requiresAuth && currentUser) next('/mcc/logviewer')
   else next()
 })
 
