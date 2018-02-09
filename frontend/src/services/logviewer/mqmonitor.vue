@@ -1,5 +1,5 @@
 <template>
-  <b-card title="MQ Status" sub-title="Message Queues for Mcc">
+  <b-card title="MQ Status" :sub-title="'Message Queues for Mcc ' + ticker">
     <b-table hover small :items="queuelist" :fields="queuefields">
       <template slot="status" slot-scope="data">
         <div style="color:green" v-if="data.value=='running'">
@@ -10,11 +10,13 @@
         </div>
       </template>
     </b-table> 
+    <div class="text-center" style="height:100px;color:grey" v-if="intervalStatus==='OFF'">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
   </b-card>
 </template>
 <script>
 import Queuefields from './config/queuefields.js'
-
 export default {
   name: 'mqmonitor',
   data () {
@@ -22,12 +24,17 @@ export default {
       queuefields: Queuefields,
       queuelist: [
       ],
-      intervalID: '',
-      intervalSec: 5000
+      intervalStatus: 'OFF',
+      timeoutID: '',
+      tickermax: 3,
+      ticker: 3
     }
   },
   created: function () {
-    this.intervalID = window.setInterval(this.getMqList, this.intervalSec)
+    this.getMqList()
+  },
+  destroyed: function () {
+    window.clearTimeout(this.timeoutID)
   },
   methods: {
     getMqList () {
@@ -35,6 +42,7 @@ export default {
       .then((response) => {
         // console.log(response)
         // TODO : 차후에 배열값을 비우고 채워넣는 것 말고, 치환하는 방법도 강구 필요
+        this.intervalStatus = 'ON'
         this.queuelist = []
         response.data.forEach(queue => {
           this.queuelist.push(
@@ -51,11 +59,21 @@ export default {
             }
           )
         })
+        this.ticker = this.tickermax
+        this.tick()
       })
       .catch(function (error) {
-        clearInterval(this.intervalID)
-        alert('서버을 확인해 주시길 바랍니다.' + error)
+        console.log('RabbitMQ를 확인해 주시길 바랍니다.' + error)
+        this.intervalStatus = 'OFF'
       })
+    },
+    tick () {
+      this.ticker = this.ticker - 1
+      if (this.ticker === -1) {
+        this.getMqList()
+      } else {
+        this.timeoutID = setTimeout(this.tick, 1000)
+      }
     }
   }
 }

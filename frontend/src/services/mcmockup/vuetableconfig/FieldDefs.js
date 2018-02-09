@@ -43,10 +43,5 @@ export default [
   {
     name: 'accessToken',
     title: 'TOKEN'
-  },
-  {
-    name: 'payload',
-    title: 'payload',
-    callback: 'omitStr'
   }
 ]

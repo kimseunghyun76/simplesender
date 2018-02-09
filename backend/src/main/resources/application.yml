@@ -2,6 +2,13 @@ server:
   address: 192.168.11.159
   port: 7090
 
+management:
+  security:
+    enabled: false
+  health:
+    defaults:
+      enabled: true
+
 # Logging pattern for the console& Logging pattern for file
 logging:
   pattern:
@@ -32,9 +39,38 @@ spring:
     username: root
     password: 1212
 
-# customer
 mcc:
   elasticsearch:
     cluster-name: elasticsearch
     host: localhost
     port : 9200
+
+# customer
+---
+spring:
+  profiles: default
+mcc:
+  elasticsearch:
+    executecmd: "elasticsearch.exe"
+    executepath: "C:\\envai_program\\elasticsearch-6.1.3\\bin"
+  logstash:
+    executecmd: "logstash -f mcc.conf --config.reload.automatic"
+    executepath: "C:\\envai_program\\logstash-6.1.3\\bin"
+  filebeat:
+    executecmd: "filebeat.exe -e -c filebeat.yml -d \"publish\""
+    executepath: "C:\\envai_program\\filebeat-6.1.3-windows-x86_64"
+  mccgateway:
+    executecmd: "java -jar MccGateway-1.0-SNAPSHOT.jar --spring.profiles.active=local"
+    executepath: "D:\\enavi_workspace\\MccGateway\\build\\libs"
+  mccdaemon:
+    executecmd: "MCCDaemon.exe"
+    executepath: "C:\\service_program\\daemon"
+  rabbitmq:
+    executecmd: "rabbitmq-server.bat"
+    executepath: "C:\\envai_program\\RabbitMQ Server\\rabbitmq_server-3.7.3\\sbin"
+  kibana:
+    executecmd: "kibana.bat"
+    executepath: "C:\\envai_program\\kibana-6.1.3-windows-x86_64\\bin"
+  mysql:
+    executecmd: "net start Mysql_NEONEX"
+    executepath: "C:\\WINDOWS\\system32"

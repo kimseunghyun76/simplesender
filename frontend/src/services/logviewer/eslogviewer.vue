@@ -30,13 +30,14 @@
             <date-picker v-model="endDate" :config="datePickerConfig"></date-picker>
           </b-input-group>
         </b-col>
-        <b-col cols="2">
+        <b-col cols="3">
           <b-input-group  size="sm" prepend="Paging">
             <b-form-select v-model="pagesize" :options="pagesizeOptions">
             </b-form-select>
+            <b-btn variant="warn" @click="deleteEsList" size="sm"> Log Erase </b-btn>
           </b-input-group>
         </b-col>
-        <b-col cols="8" class="text-right">
+        <b-col cols="7" class="text-right">
           <h5>Total : {{ eslogtotal }}</h5>
         </b-col>
       </b-row>
@@ -76,7 +77,8 @@
           <b-button size="sm" @click="data.toggleDetails"  class="mt-3">Hide Details</b-button>
         </b-card>
       </template>
-    </b-table> 
+    </b-table>
+    <div class='text-center' style='height:200px'>{{eslogresult}}</div>
   </b-card>
 </template>
 <script>
@@ -138,10 +140,23 @@ export default {
       eslogfields: EsLogfields,
       esloglist: [
       ],
-      eslogtotal: 0
+      eslogtotal: 0,
+      eslogresult: ''
     }
   },
   methods: {
+    deleteEsList () {
+      if (confirm('정말 모든 로그를 삭제하시겠습니까?')) {
+        this.$http.post('http://192.168.11.159:7090/MccLogDelete')
+        .then((response) => {
+          this.esloglist = []
+          this.eslogtotal = 0
+        })
+        .catch(function (err) {
+          console.log(err)
+        })
+      }
+    },
     getEsList () {
       this.$http.post('http://192.168.11.159:7090/MccLogList', {
         pagesize: this.pagesize,
@@ -154,9 +169,13 @@ export default {
         endDate: this.endDate
       })
       .then((response) => {
-        console.log(response)
         this.esloglist = []
         this.eslogtotal = response.data.totalRecords
+        if (this.eslogtotal === 0) {
+          this.eslogresult = '검색한 결과가 없습니다.'
+        } else {
+          this.eslogresult = '전체 ' + this.eslogtotal + '중에 ' + this.pagesize + '열만 추출되었습니다.'
+        }
         response.data.data.forEach(queue => {
           this.esloglist.push(
             {
@@ -168,14 +187,14 @@ export default {
               uuid: queue.uuid,
               srcMrn: queue.srcMrn,
               dstMrn: queue.dstMrn,
-              logMsg: decodeURI(queue.logMsg).replace(/\+/g, ' ')
+              logMsg: queue.logMsg.replace(/\s</g, '\t<').replace(/\t</g, '\n\t<').replace(/></g, '>\n<')
             }
           )
         })
       })
       .catch(function (error) {
         console.log(error)
-        alert('서버을 확인해 주시길 바랍니다.')
+        alert('서버를 확인해 주시길 바랍니다.')
       })
     }
   }

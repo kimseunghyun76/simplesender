@@ -1,8 +1,8 @@
 export default{
   table: {
     tableClass: 'table b-table table-bordered table-hover ',
-    ascendingIcon: 'fa fa-sort-asc',
-    descendingIcon: 'fa fa-sort-desc',
+    ascendingIcon: 'fa fa-sort-up',
+    descendingIcon: 'fa fa-sort-down',
     handleIcon: 'fa fa-bars',
     renderIcon: function (classes, options) {
       return `<span class="${classes.join(' ')}"></span>`

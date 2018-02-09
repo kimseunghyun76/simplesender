@@ -106,7 +106,7 @@ public class ElasticSearchRepository {
             }
 
             if(!"".equals(startDate)) {
-                querydsl.append("            { \"range\" : { ");
+                querydsl.append("            ,{ \"range\" : { ");
                 querydsl.append("               \"@timestamp\" : { ");
                 querydsl.append("                    \"gte\" : \"");
                 querydsl.append(startDate);
@@ -162,4 +162,15 @@ public class ElasticSearchRepository {
         return new VueTableResponse(total,mccLogList);
     }
 
+
+    public boolean deleteAllData() {
+        boolean isOk = true;
+        try{
+            Response response = client.performRequest("DELETE", "/mcc");
+        }catch (IOException e){
+            isOk = false;
+            System.out.println(e.getMessage());
+        }
+        return isOk;
+    }
 }

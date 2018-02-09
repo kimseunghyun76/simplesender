@@ -1,12 +1,9 @@
 <template>
-  <b-container fluid class="mt-3">
+  <b-container fluid>
     <b-row>
       <b-col>
         <b-card title="Encoder/Decoder"
-                sub-title="Copyright Neonexsoft.inc">
-            <p class="card-text">
-                Input a String of text  and encode or decode it as you like
-            </p>
+                sub-title="Input a String of text  and encode or decode it as you like">
         </b-card> 
       </b-col>
     </b-row>
@@ -15,11 +12,10 @@
         <b-form-textarea 
           v-model="requestText"
           placeholder="Enter Text" 
-          :rows="6" 
+          :rows="8" 
           :max-rows="10" 
-          :state="translate"
+          :state="computedtranslate"
           contenteditable></b-form-textarea>
-        <b-button variant="success" @click="translate" >translate</b-button>
       </b-col>
     </b-row>
     <b-row class="mt-3">
@@ -27,7 +23,7 @@
         <h3>Encoded</h3>
         <b-form-textarea 
           v-model.trim="encodedText"
-          :rows="6" 
+          :rows="8" 
           :max-rows="10" 
           readonly></b-form-textarea>
       </b-col>
@@ -35,7 +31,7 @@
         <h3>Decoded</h3>
         <b-form-textarea 
           v-model.trim="decodedText"
-          :rows="6" 
+          :rows="8" 
           :max-rows="10" 
           readonly></b-form-textarea>
       </b-col>
@@ -45,7 +41,7 @@
         <h3>Base64 Encoded (atob)</h3>
         <b-form-textarea 
           v-model.trim="encoded64Text"
-          :rows="6" 
+          :rows="8" 
           :max-rows="10" 
           readonly></b-form-textarea>
       </b-col>
@@ -53,7 +49,7 @@
         <h3>Base64 Decoded (btoa)</h3>
         <b-form-textarea 
           v-model.trim="decoded64Text"
-          :rows="6" 
+          :rows="8" 
           :max-rows="10" 
           readonly></b-form-textarea>
       </b-col>
@@ -75,22 +71,20 @@ export default {
   created: function () {
   },
   methods: {
+    realtranslate () {
+      this.decodedText = decodeURI(this.requestText)
+      this.encodedText = encodeURI(this.requestText)
+      try {
+        this.decoded64Text = btoa(this.requestText)
+        this.encoded64Text = atob(this.requestText)
+      } catch (err) {
+      }
+    }
   },
   computed: {
-    translate () {
+    computedtranslate () {
       if (this.requestText.length > 0) {
-        this.decodedText = decodeURI(this.requestText)
-        this.encodedText = encodeURI(this.requestText)
-        try {
-          this.decoded64Text = btoa(this.requestText)
-          this.encoded64Text = atob(this.requestText)
-        } catch (err) {
-        }
-      } else {
-        this.encodedText = ''
-        this.decodedText = ''
-        this.encoded64Text = ''
-        this.decoded64Text = ''
+        this.realtranslate()
       }
     }
   }

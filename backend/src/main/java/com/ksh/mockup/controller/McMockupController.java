@@ -1,14 +1,14 @@
 package com.ksh.mockup.controller;
 
-import com.ksh.mockup.entity.*;
+import com.ksh.mockup.entity.ClientResponse;
+import com.ksh.mockup.entity.MyFile;
+import com.ksh.mockup.entity.MyHttpRequest;
+import com.ksh.mockup.entity.MyHttpResponse;
 import com.ksh.mockup.repository.ClientResponseRepository;
-import com.ksh.mockup.repository.ElasticSearchRepository;
 import com.ksh.mockup.repository.VuePage;
 import com.ksh.mockup.repository.VuePageable;
 import com.ksh.mockup.service.FileService;
 import com.ksh.mockup.service.ServerService;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
@@ -60,21 +61,6 @@ public class McMockupController {
     @Autowired
     private ClientResponseRepository clientResponseRepository;
 
-
-    @Autowired
-    private ElasticSearchRepository elasticSearchRepository;
-
-    /**
-     * ES 에서 데이터 추출
-     * @param vueTableRequest
-     * @return
-     */
-    @CrossOrigin(maxAge = 3600)
-    @RequestMapping(path="/MccLogList")
-    @ResponseBody()
-    public VueTableResponse getESLogResponseList(@RequestBody VueTableRequest vueTableRequest) {
-        return elasticSearchRepository.findMessageWithPrefix(vueTableRequest);
-    }
 
     @CrossOrigin(maxAge = 3600)
     @RequestMapping(path="/clientResponseList")
@@ -152,16 +138,13 @@ public class McMockupController {
     }
 
     @CrossOrigin(maxAge = 3600)
-    @RequestMapping("/queuelist")
-    @ResponseBody
-    public String  getQueueList() throws Exception{
-        HttpResponse<String> response = Unirest.get("http://localhost:15672/api/queues")
-                .header("authorization", "Basic Z3Vlc3Q6Z3Vlc3Q=")
-                .header("cache-control", "no-cache")
-                .asString();
-        return response.getBody().toString();
+    @RequestMapping(path="/clientResponseDelete")
+    @ResponseBody()
+    @Transactional
+    public boolean deleteClientResponse() {
+        clientResponseRepository.deleteBySeqGreaterThan(0L);
+        return true;
     }
-
 
 
     @CrossOrigin(maxAge = 3600)

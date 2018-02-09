@@ -71,10 +71,4 @@ export default {
 </script>
 
 <style>
-#main {
-  height: 100hz;
-  font-size: 13px;
-  color: black;
-  border: 1px solid #000;
-}
 </style>

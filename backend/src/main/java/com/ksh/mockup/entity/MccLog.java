@@ -84,11 +84,11 @@ public class MccLog {
             case "212":
                 ts.append("(1->)mcc got a request from mms");
                 break;
-            case "210":
-                ts.append("(2->)mcc pushed to queue");
-                break;
             case "213":
-                ts.append("(3->)mcc sent a response to mms");
+                ts.append("(2->)mcc sent a response to mms");
+                break;
+            case "210":
+                ts.append("(3->)mcc pushed to queue");
                 break;
             case "203":
                 ts.append("(<-1)mcc received a request from queue");

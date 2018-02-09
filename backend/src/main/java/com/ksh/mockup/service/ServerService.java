@@ -69,7 +69,7 @@ public class ServerService {
 
             wr = new DataOutputStream(conn.getOutputStream());
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(wr,"UTF-8"));
-            byte[] b_body = URLEncoder.encode(mcHttpRequest.getBody(),"UTF-8").getBytes();
+            byte[] b_body = mcHttpRequest.getBody().getBytes();
             wr.write(b_body);
 
             //Stream Buffer를 비워준다.
@@ -96,7 +96,7 @@ public class ServerService {
             }
             log.info("##### Response Body #####");
             if (200 <= conn.getResponseCode() && conn.getResponseCode() <= 299) {
-                in = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"), conn.getContentLength());
+                in = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
                 String inputLine;
                 StringBuilder sbBody = new StringBuilder();
                 while ((inputLine = in.readLine()) != null) {

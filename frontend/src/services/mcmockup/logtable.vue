@@ -15,10 +15,12 @@
 <script>
 import Vue from 'vue'
 import MyVuetable from '@/components/vuetable2/MyVuetable'
+import FilterBar from './vuetableconfig/FilterBar'
 import FieldDefs from './vuetableconfig/FieldDefs.js'
 import DetailRow from './vuetableconfig/DetailRow'
 
 Vue.component('my-detail-row', DetailRow)
+Vue.component('filter-bar', FilterBar)
 
 export default {
   name: 'logtable',

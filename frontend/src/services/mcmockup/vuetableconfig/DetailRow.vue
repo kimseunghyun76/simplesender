@@ -22,7 +22,7 @@
   export default {
     data () {
       return {
-        payload: decodeURI(this.rowData.payload).replace(/\+/g, ' ')
+        payload: this.rowData.payload
       }
     },
     props: {

@@ -7,13 +7,11 @@ import accounting from 'accounting'
 import moment from 'moment'
 import Vue from 'vue'
 import CustomActions from './CustomAction'
-import FilterBar from './FilterBar'
 import VueEvents from 'vue-events'
 import CssConfig from './config/VuetableCssConfig.js'
 
 Vue.use(VueEvents)
 Vue.component('custom-actions', CustomActions)
-Vue.component('filter-bar', FilterBar)
 
 export default {
   name: 'my-vuetable',
@@ -53,7 +51,6 @@ export default {
   },
   mounted () {
     this.$events.$on('filter-set', eventData => this.onFilterSet(eventData))
-    this.$events.$on('filter-reset', e => this.onFilterReset())
     this.$events.$on('detail-view', index => this.$refs.vuetable.toggleDetailRow(index))
   },
   data () {
@@ -168,18 +165,16 @@ export default {
       return `<span class="${classes.join(' ')}" ${options}></span>`
     },
     omitStr (value) {
-      alert(value.substring(0, 30))
-      return encodeURI((value.length > 30) ? value.substring(0, 30) + '...' : value)
+      console.log(value.substring(0, 30))
+      return (value.length > 30) ? '<pre>' + value.substring(0, 30) + '...</pre>' : value
     },
     onFilterSet (filterText) {
       this.appendParams.filter = {
         'filter': filterText
       }
-      Vue.nextTick(() => this.$refs.vuetable.refresh())
-    },
-    onFilterReset () {
-      this.appendParams.filter = {}
-      Vue.nextTick(() => this.$refs.vuetable.refresh())
+      if (this.$refs.vuetable !== undefined) {
+        Vue.nextTick(() => this.$refs.vuetable.refresh())
+      }
     },
     onCellClicked (data, field, event) {
       console.log('cellClicked: ', field.name)

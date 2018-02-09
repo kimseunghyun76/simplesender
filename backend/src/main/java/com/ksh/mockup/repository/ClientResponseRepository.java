@@ -17,6 +17,6 @@ public interface ClientResponseRepository extends PagingAndSortingRepository<Cli
     Page<ClientResponse> findByRegDateBetweenAndDstMrnContaining(LocalDateTime start_date, LocalDateTime  end_date,String dstMrn, Pageable pageable);
     Page<ClientResponse> findByRegDateBetweenAndSrcMrnContaining(LocalDateTime start_date, LocalDateTime  end_date,String srcMrn, Pageable pageable);
     Page<ClientResponse> findByRegDateBetween(LocalDateTime start_date, LocalDateTime  end_date, Pageable pageable);
-
+    void deleteBySeqGreaterThan(Long seq);
 
 }
