@@ -1,5 +1,5 @@
 server:
-  address: 192.168.11.159
+  address: 192.168.11.62
   port: 7090
 
 management:

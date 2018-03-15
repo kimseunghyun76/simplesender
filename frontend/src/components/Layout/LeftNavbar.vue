@@ -2,7 +2,8 @@
   <div>
     <div style="padding:10px;color:grey;color:white">
       <h5>
-        Maritime Cloud Connector<br/>
+        <i class="fas fa-ship"></i> &nbsp;E-Navigation MCC<br/>
+        <small class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maritime Cloud Connector</small><br/>
       </h5>
     </div>
     <b-list-group>
@@ -28,6 +29,12 @@
         <div style="font-size:0.8em; color:grey">
           <h6 style="color:black"><i class="fas fa-file-code"></i> &nbsp;<a href="#/mcc/coder" target="_blank">Encoder/Decoder</a></h6>
           - normal, base64 encoder/decoder
+        </div>
+      </b-list-group-item>
+      <b-list-group-item href="#/mcc/links">
+        <div style="font-size:0.8em; color:grey">
+          <h6 style="color:black"><i class="fas fa-sitemap"></i> &nbsp;<a href="#/mcc/links" target="_blank">Sitemap</a></h6>
+          - Kaist MMS Server, Service Links
         </div>
       </b-list-group-item>
     </b-list-group>
@@ -112,6 +119,7 @@
   </div>
 </template>
 <script>
+  import backend from '../../config/backend.js'
   export default {
     name: 'selfmonitor',
     data () {
@@ -130,7 +138,7 @@
     },
     methods: {
       healthCheck () {
-        this.$http.get('http://192.168.11.159:7090/metrics')
+        this.$http.get(backend.restapi.metrics)
         .then((response) => {
           this.metrics = response.data
           this.ticker = this.tickermax

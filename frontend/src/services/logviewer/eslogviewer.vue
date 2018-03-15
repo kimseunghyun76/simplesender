@@ -21,6 +21,8 @@
           </b-input-group>
         </b-col>
         <b-col cols="4" >
+          <b-form-select v-model="msgCode" :options="msgCodeOptions" size="sm">
+          </b-form-select>
         </b-col>
       </b-row>
       <b-row class="mt-1">
@@ -84,6 +86,7 @@
 <script>
 import EsLogfields from './config/eslogfields.js'
 import datePicker from 'vue-bootstrap-datetimepicker'
+import backend from '../../config/backend.js'
 
 export default {
   name: 'eslogviewer',
@@ -130,6 +133,10 @@ export default {
         { value: 'dstMrn', text: 'DSTMRN' },
         { value: 'srcMrn', text: 'SRCMRN' }
       ],
+      msgCode: '',
+      msgCodeOptions: [
+        { value: '', text: 'Log Type' }
+      ],
       searchvalue: '',
       datePickerConfig: {
         format: 'YYYY-MM-DD',
@@ -144,10 +151,22 @@ export default {
       eslogresult: ''
     }
   },
+  created: function () {
+    this.$http.post(backend.restapi.mccmsgcode)
+    .then((response) => {
+      response.data.forEach(element => {
+        this.msgCodeOptions.push(element)
+      })
+    })
+    .catch(function (error) {
+      console.log(error)
+      alert('backend server가 활성화 되어 있지 않습니다.\n관리자에게 해당 사항에 대한 확인 요청 드립니다.')
+    })
+  },
   methods: {
     deleteEsList () {
       if (confirm('정말 모든 로그를 삭제하시겠습니까?')) {
-        this.$http.post('http://192.168.11.159:7090/MccLogDelete')
+        this.$http.post(backend.restapi.mcclogdelete)
         .then((response) => {
           this.esloglist = []
           this.eslogtotal = 0
@@ -158,11 +177,12 @@ export default {
       }
     },
     getEsList () {
-      this.$http.post('http://192.168.11.159:7090/MccLogList', {
+      this.$http.post(backend.restapi.mccloglist, {
         pagesize: this.pagesize,
         program: this.program,
         control: this.control,
         severity: this.severity,
+        msgCode: this.msgCode,
         searchname: this.searchname,
         searchvalue: this.searchvalue,
         startDate: this.startDate,

@@ -30,6 +30,7 @@
 
 <script>
 import datePicker from 'vue-bootstrap-datetimepicker'
+import backend from '../../../config/backend.js'
 
 export default {
   components: {
@@ -62,7 +63,7 @@ export default {
     },
     deleteLog () {
       if (confirm('모든 로그 데이터를 삭제하시겠습니까?')) {
-        this.$http.post('http://192.168.11.159:7090/clientResponseDelete')
+        this.$http.post(backend.restapi.clientresponsedelete)
         .then((response) => {
           if (response.data) {
             this.$events.fire('table-reload', '')

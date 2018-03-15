@@ -58,4 +58,28 @@ public class FileService {
         }
         return result.toString();
     }
+
+    public String getJsonFile(MyFile mcSvFile){
+        StringBuilder result = new StringBuilder("");
+        if(mcSvFile.getFileName() != null && mcSvFile.getFileName() != "" ){
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource("static/json/"+mcSvFile.getFileName()).getFile());
+            if(file.isFile()){
+                try (Scanner scanner = new Scanner(file)) {
+                    while (scanner.hasNextLine()) {
+                        String line = scanner.nextLine();
+                        result.append(line).append("\n");
+                    }
+                    scanner.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                result.append("No files");
+            }
+        }else{
+            result.append("No File Name");
+        }
+        return result.toString();
+    }
 }

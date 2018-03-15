@@ -9,6 +9,7 @@ public class VueTableRequest {
     private String program="";
     private String control="";
     private String severity="";
+    private String msgCode="";
     private String searchname="";
     private String searchvalue="";
     private String startDate="";

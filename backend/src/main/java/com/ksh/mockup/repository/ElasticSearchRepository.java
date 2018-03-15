@@ -40,6 +40,7 @@ public class ElasticSearchRepository {
         String searchProgram = vueTableRequest.getProgram();
         String searchComponent = vueTableRequest.getControl();
         String searchSeverity= vueTableRequest.getSeverity();
+        String searchmsgCode= vueTableRequest.getMsgCode();
         String searchSize= Integer.toString(vueTableRequest.getPagesize());
 
         String startDate= vueTableRequest.getStartDate();
@@ -53,7 +54,7 @@ public class ElasticSearchRepository {
         querydsl.append("  \"query\": {");
         querydsl.append("        \"bool\" : { ");
         querydsl.append("            \"must\" : [");
-        if("".equals(searchValue) && "".equals(searchProgram) && "".equals(searchComponent) && "".equals(searchSeverity)  ) {
+        if("".equals(searchValue) && "".equals(searchProgram) && "".equals(searchComponent) && "".equals(searchSeverity) && "".equals(searchmsgCode)  ) {
             querydsl.append("        {\"exists\" : { ");
             querydsl.append("              \"field\" : \"dstMrn\" ");
             querydsl.append("         }},");
@@ -87,6 +88,14 @@ public class ElasticSearchRepository {
             if(!"".equals(searchSeverity)){
                 querydsl.append("            { \"match\": { \"severityCode\":   \"");
                 querydsl.append(searchSeverity);
+                querydsl.append("\"        }}");
+                if(!"".equals(searchValue) ){
+                    querydsl.append("           ,");
+                }
+            }
+            if(!"".equals(searchmsgCode)){
+                querydsl.append("            { \"match\": { \"msgCode\":   \"");
+                querydsl.append(searchmsgCode);
                 querydsl.append("\"        }}");
                 if(!"".equals(searchValue) ){
                     querydsl.append("           ,");

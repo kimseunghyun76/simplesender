@@ -15,6 +15,10 @@ export default [
     sortable: true
   },
   {
+    key: 'tps',
+    label: 'Transaction Per Second'
+  },
+  {
     key: 'total',
     label: 'total'
   },

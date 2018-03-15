@@ -81,6 +81,7 @@
 </template>
 <script>
 // intervalID 은 내부 Data로 활용불가
+import backend from '../../config/backend.js'
 var intervalID
 export default {
   name: 'httpSender',
@@ -92,7 +93,7 @@ export default {
       responseStatus: 'STOP',
       responseHeader: '',
       responseData: '',
-      targeturl: 'http://143.248.55.83:8088',
+      targeturl: backend.mockup.defaulttarget,
       payload: '',
       inputs: [
         { name: 'dstMRN', value: 'urn:mrn:smart:service:instance:mof:S40T' },
@@ -127,7 +128,7 @@ export default {
     }
   },
   created: function () {
-    this.$http.post('http://192.168.11.159:7090/svlist')
+    this.$http.post(backend.restapi.svlist)
     .then((response) => {
       response.data.forEach(element => {
         this.svlist.push(element)
@@ -164,7 +165,7 @@ export default {
       this.inputs.splice(index, 1)
     },
     sendToMc () {
-      this.$http.post('http://192.168.11.159:7090/path', {
+      this.$http.post(backend.restapi.svpath, {
         targetUrl: this.targeturl,
         method: this.selectedmethod,
         headers: this.inputs,
@@ -182,7 +183,7 @@ export default {
     },
     intervalSendToMc () {
       this.sendTotalcount++
-      this.$http.post('http://192.168.11.159:7090/path', {
+      this.$http.post(backend.restapi.svpath, {
         targetUrl: this.targeturl,
         method: this.selectedmethod,
         headers: this.inputs,
@@ -213,7 +214,7 @@ export default {
     },
     getSVFile () {
       if (this.selectedsvlist !== '') {
-        this.$http.post('http://192.168.11.159:7090/svfile', {
+        this.$http.post(backend.restapi.svfile, {
           fileName: this.selectedsvlist
         })
         .then((response) => {

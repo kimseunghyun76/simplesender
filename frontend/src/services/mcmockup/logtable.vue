@@ -2,7 +2,7 @@
   <div>
     <b-card title="Get messages" sub-title="This target is http://106.248.228.114:7090/">
       <my-vuetable
-        api-url="http://192.168.11.159:7090/clientResponseList"
+        api-url="apiurl"
         :fields="fields"
         :sort-order="sortOrder"
         :append-params="moreParams"
@@ -18,6 +18,7 @@ import MyVuetable from '@/components/vuetable2/MyVuetable'
 import FilterBar from './vuetableconfig/FilterBar'
 import FieldDefs from './vuetableconfig/FieldDefs.js'
 import DetailRow from './vuetableconfig/DetailRow'
+import backend from '../../config/backend.js'
 
 Vue.component('my-detail-row', DetailRow)
 Vue.component('filter-bar', FilterBar)
@@ -30,6 +31,7 @@ export default {
   data () {
     return {
       // MyVueTable
+      apiurl: backend.restapi.clientResponseList,
       fields: FieldDefs,
       sortOrder: [
         {

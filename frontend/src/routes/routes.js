@@ -4,6 +4,7 @@ import Logviewer from '@/services/logviewer/main'
 import Coder from '@/services/coder/main'
 import McMockup from '@/services/mcmockup/main'
 import Monitor from '@/services/monitor/main'
+import Links from '@/services/links/main'
 
 import MccLayout from '@/components/Layout/MccLayout'
 const routes = [
@@ -57,6 +58,14 @@ const routes = [
         path: 'monitor',
         name: 'Monitor',
         component: Monitor,
+        meta: {
+          requiresAuth: true
+        }
+      },
+      {
+        path: 'links',
+        name: 'Links',
+        component: Links,
         meta: {
           requiresAuth: true
         }

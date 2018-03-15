@@ -1,0 +1,34 @@
+[
+    {
+      "value": "212",
+      "text": "mcc got a request from mms"
+    },
+    {
+      "value": "213",
+      "text":"mcc sent a response to mms"
+    },
+    {
+      "value": "210",
+      "text":"mcc pushed to queue"
+    },
+    {
+      "value": "203",
+      "text":"mcc received a request from queue"
+    },
+    {
+      "value": "219",
+      "text":"mcc sent a request to mms"
+    },
+    {
+      "value": "220",
+      "text":"mcc received a response from mms"
+    },
+    {
+      "value": "444",
+      "text":"UNAUTHORIZED DATA"
+    },
+    {
+      "value": "445",
+      "text":"the dstMRN is not the  same as  MRN in VerifySignedData"
+    }
+  ]

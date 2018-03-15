@@ -6,7 +6,7 @@ import App from './App'
 
 import axios from 'axios'
 import firebase from 'firebase'
-import firebaseconfig from './firebaseconfig.js'
+import firebaseconfig from './config/firebaseconfig.js'
 
 // BootstrapVue plugin
 import BootstrapVue from 'bootstrap-vue'

@@ -57,6 +57,7 @@
   </b-card>
 </template>
 <script>
+  import backend from '../../config/backend.js'
   export default {
     name: 'mcc-program',
     props: {
@@ -75,7 +76,7 @@
     },
     data () {
       return {
-        status: 'OFF',
+        status: 'HOLD',
         pid: '-',
         updateDateTime: '0',
         timeoutID: '',
@@ -92,7 +93,7 @@
     },
     methods: {
       healthCheck () {
-        this.$http.post('http://192.168.11.159:7090/status', {
+        this.$http.post(backend.process.status, {
           name: this.pmname,
           ip: this.ip,
           port: this.port
@@ -116,9 +117,9 @@
         })
       },
       serviceStart () {
-        this.status = 'Hold'
+        this.status = 'HOLD'
         this.ticker = 20
-        this.$http.post('http://192.168.11.159:7090/pstart', {
+        this.$http.post(backend.process.pstart, {
           name: this.pmname
         })
         .then((response) => {
@@ -130,8 +131,8 @@
       },
       serviceStop () {
         if (confirm('서비스를 중지하게 되면, MCC 서비스 전체가 영향을 받습니다. \n그래도 중지하시겠습니까?')) {
-          this.status = 'Hold'
-          this.$http.post('http://192.168.11.159:7090/pstop', {
+          this.status = 'HOLD'
+          this.$http.post(backend.process.pstop, {
             pid: this.pid
           })
           .then((response) => {
