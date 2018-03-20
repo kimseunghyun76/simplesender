@@ -24,7 +24,7 @@ public class FileService {
         try{
             ClassLoader cl = this.getClass().getClassLoader();
             ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(cl);
-            Resource[] resources = resolver.getResources("classpath:static/svlist/**/*.xml") ;
+            Resource[] resources = resolver.getResources("classpath:static/svlist/**/*.*") ;
             for (Resource resource: resources){
                 svList.add(resource.getFilename());
                 log.warn(resource.getFilename());

@@ -1,0 +1,8 @@
+{
+    "PilotGuidelineDownloadReq": [
+        {
+            "PilotGlNum": "111",
+            "shipMRN": "aaaaaaaaa"
+        }
+    ]
+}

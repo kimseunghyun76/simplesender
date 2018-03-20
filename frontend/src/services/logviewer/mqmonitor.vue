@@ -70,7 +70,7 @@ export default {
         response.data.forEach((queue, index) => {
           let oldtotallist = []
           let tpsperindex = 0
-          if (this.oldqueuelist.length > 0) {
+          if (this.oldqueuelist.length > 0 && this.oldqueuelist.length > index) {
             tpsperindex = Math.abs((this.oldqueuelist[index].total - queue.messages) / this.tickermax, 2)
             if (this.oldqueuelist[index].totallist.length > this.chartlength - 1) {
               oldtotallist = this.oldqueuelist[index].totallist.slice(1, this.chartlength)
@@ -103,7 +103,6 @@ export default {
       })
       .catch(function (error) {
         console.log('RabbitMQ를 확인해 주시길 바랍니다.' + error)
-        this.intervalStatus = 'OFF'
       })
     },
     tick () {

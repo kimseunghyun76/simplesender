@@ -1,0 +1,10 @@
+{
+    "MarineShipReqInfo": [{ 
+		"MRN":"aaaaaa",
+		"IMO_NO":"bbbbbb",
+		"CALL_SIGN":"콜사인",
+		"MMSI":"dddddddd", 
+		"REQ_TYPE":"SCH_WORK_INFO"
+        }
+    ]
+}

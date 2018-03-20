@@ -172,7 +172,7 @@ export default {
         body: this.payload
       })
       .then((response) => {
-        this.responseStatus = response.data.responseCode
+        this.responseStatus = 'STOP'
         this.responseHeader = response.data.headers
         this.responseData = response.data.payload
         this.$events.fire('table-reload', '')
@@ -218,7 +218,11 @@ export default {
           fileName: this.selectedsvlist
         })
         .then((response) => {
-          this.payload = response.data
+          if (typeof response.data !== 'string') {
+            this.payload = JSON.stringify(response.data, undefined, 4)
+          } else {
+            this.payload = response.data
+          }
         })
         .catch(function (error) {
           console.log(error)

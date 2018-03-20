@@ -1,0 +1,8 @@
+{
+    "NauticalPublicationVersionsRequest": [ 
+		{ 
+			"sourceMRN":"aaaaaa",
+			"specs":"bbbb"
+        }
+    ]
+}
