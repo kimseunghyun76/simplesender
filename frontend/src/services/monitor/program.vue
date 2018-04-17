@@ -13,26 +13,17 @@
           <b-row>
             <b-col style="font-size:1.0em; color:rgb(0, 80, 90)"> <i class="fas fa-cog fa-spin"></i> {{status}} </b-col>
           </b-row>
-          <b-row>
-            <b-col>
-              <div v-if="status==='ON'">
-                <div v-if="port===''">
-                  <small class="text-muted"> SERVICE PID : {{pid}} </small><br/>
-                  <small class="text-muted"> Session Name : {{sessionname}} </small><br/>
-                  <small class="text-muted"> Session : {{session}} </small><br/>
-                  <small class="text-muted"> Used Memory : {{usedmem}} </small><br/>
-                  <small class="text-muted"> Memory Using Status : {{memusingstatus}} </small><br/>
-                  <small class="text-muted"> User : {{user}} </small><br/>
-                  <small class="text-muted"> CPU Time : {{cputime}} </small><br/>
-                  <small class="text-muted"> Path : {{path}} </small>
+            <b-row>
+              <b-col>
+                <div v-if="status==='ON'">
+                  <small class="text-muted"> SERVICE IP : {{ip}} </small> | 
+                  <small class="text-muted" > SERVICE PORT : {{port}} </small> <br />
+                  <small class="text-muted"> {{statusLog}} </small> 
                 </div>
-                <div v-else>
-                  <small class="text-muted"> SERVICE PID : {{pid}} </small> | 
-                  <small class="text-muted" > SERVICE PORT : {{port}} </small>
-                </div>
-              </div>
-            </b-col>
-          </b-row>
+              </b-col>
+              <b-col>
+              </b-col>
+            </b-row>
         </b-container>
       </div>
       <div v-else>
@@ -110,6 +101,7 @@
           this.cputime = response.data.cputime
           this.path = response.data.path
           this.ticker = this.tickermax
+          this.statusLog = response.data.statusLog
           this.tick()
         })
         .catch(function (error) {
@@ -133,7 +125,7 @@
         if (confirm('서비스를 중지하게 되면, MCC 서비스 전체가 영향을 받습니다. \n그래도 중지하시겠습니까?')) {
           this.status = 'HOLD'
           this.$http.post(backend.process.pstop, {
-            pid: this.pid
+            name: this.pmname
           })
           .then((response) => {
             console.log(response.data)

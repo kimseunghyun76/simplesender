@@ -2,7 +2,7 @@
   <div>
     <b-card title="Get messages" sub-title="This target is http://106.248.228.114:7090/">
       <my-vuetable
-        api-url="apiurl"
+        :api-url="apiurl"
         :fields="fields"
         :sort-order="sortOrder"
         :append-params="moreParams"

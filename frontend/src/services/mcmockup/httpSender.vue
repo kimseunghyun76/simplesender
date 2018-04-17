@@ -218,6 +218,7 @@ export default {
           fileName: this.selectedsvlist
         })
         .then((response) => {
+          console.log(response)
           if (typeof response.data !== 'string') {
             this.payload = JSON.stringify(response.data, undefined, 4)
           } else {
